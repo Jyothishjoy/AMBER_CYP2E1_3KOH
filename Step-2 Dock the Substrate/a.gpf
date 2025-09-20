@@ -1,0 +1,13 @@
+npts 60 60 60                        # num.grid points in xyz
+gridfld 3KOH_combined.maps.fld       # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C Fe HD N OA SA     # receptor atom types
+ligand_types A C                     # ligand atom types
+receptor 3KOH_combined.pdbqt         # macromolecule
+gridcenter -2.143 2.862 10.403       # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 3KOH_combined.A.map              # atom-specific affinity map
+map 3KOH_combined.C.map              # atom-specific affinity map
+elecmap 3KOH_combined.e.map          # electrostatic potential map
+dsolvmap 3KOH_combined.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

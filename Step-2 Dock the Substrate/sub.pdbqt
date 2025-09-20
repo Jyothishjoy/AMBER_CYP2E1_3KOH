@@ -1,0 +1,15 @@
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+ROOT
+HETATM    1  C           0      -2.487  -0.000   0.000  0.00  0.00     0.016 C 
+HETATM    2  C           0      -0.983  -0.000   0.000  0.00  0.00    -0.030 A 
+HETATM    3  C           0      -0.067   1.282   0.039  0.00  0.00     0.004 A 
+HETATM    4  C           0       0.837   0.675  -1.090  0.00  0.00     0.001 A 
+HETATM    5  C           0      -0.067  -0.607  -1.130  0.00  0.00     0.004 A 
+HETATM    6  C           0       0.838  -1.281  -0.039  0.00  0.00     0.001 A 
+HETATM    7  C           0      -0.066  -0.675   1.091  0.00  0.00     0.004 A 
+HETATM    8  C           0       1.744   0.000  -0.000  0.00  0.00     0.000 A 
+HETATM    9  C           0       0.837   0.607   1.129  0.00  0.00     0.001 A 
+ENDROOT
+TORSDOF 1

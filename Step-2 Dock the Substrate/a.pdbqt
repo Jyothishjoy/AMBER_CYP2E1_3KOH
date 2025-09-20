@@ -1,0 +1,420 @@
+MODEL        1
+USER    Run = 1
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.31 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.560528 3.698120 11.207741
+USER    NEWDPF quaternion0 -0.691081 0.338644 -0.496681 -0.401291
+USER    NEWDPF axisangle0 -0.754496 0.369718 -0.542258 -132.682122
+USER    NEWDPF quat0 -0.754496 0.369718 -0.542258 -132.682122
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.910  10.149 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.851   4.606  10.773 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -5.649   3.246  10.003 -0.69 -0.00    +0.004 A 
+ATOM      4  C           0      -6.438   2.488  11.128 -0.60 +0.00    +0.001 A 
+ATOM      5  C           0      -6.638   3.838  11.902 -0.47 +0.00    +0.004 A 
+ATOM      6  C           0      -5.295   3.594  12.677 -0.49 +0.00    +0.001 A 
+ATOM      7  C           0      -4.504   4.353  11.554 -0.53 -0.00    +0.004 A 
+ATOM      8  C           0      -5.095   2.243  11.904 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -4.307   3.003  10.779 -0.67 -0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        2
+USER    Run = 2
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.81 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.555035 3.706860 11.200257
+USER    NEWDPF quaternion0 0.005890 0.259555 0.541211 0.799804
+USER    NEWDPF axisangle0 0.009812 0.432404 0.901627 73.777184
+USER    NEWDPF quat0 0.009812 0.432404 0.901627 73.777184
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.908  10.124 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.848   4.611  10.758 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.494   4.363  11.526 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.307   3.004  10.766 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.657   3.241  10.002 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.436   2.498  11.145 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.624   3.857  11.906 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.086   2.258  11.908 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.274   3.620  12.667 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        3
+USER    Run = 3
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  220.10 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.567224 3.727127 11.208939
+USER    NEWDPF quaternion0 -0.684879 0.601174 0.037455 0.410033
+USER    NEWDPF axisangle0 -0.750906 0.659131 0.041066 131.586205
+USER    NEWDPF quat0 -0.750906 0.659131 0.041066 131.586205
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.267   5.907  10.082 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.855   4.622  10.746 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -6.641   3.895  11.903 -0.47 +0.00    +0.004 A 
+ATOM      4  C           0      -5.297   3.671  12.680 -0.48 +0.00    +0.001 A 
+ATOM      5  C           0      -4.507   4.388  11.529 -0.53 -0.00    +0.004 A 
+ATOM      6  C           0      -4.318   3.011  10.799 -0.67 -0.00    +0.001 A 
+ATOM      7  C           0      -5.662   3.236  10.020 -0.70 -0.00    +0.004 A 
+ATOM      8  C           0      -5.107   2.293  11.951 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -6.451   2.520  11.172 -0.60 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        4
+USER    Run = 4
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.92 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.546181 3.709615 11.204186
+USER    NEWDPF quaternion0 -0.005490 -0.263461 -0.537766 -0.800853
+USER    NEWDPF axisangle0 -0.009167 -0.439938 -0.897982 -73.576700
+USER    NEWDPF quat0 -0.009167 -0.439938 -0.897982 -73.576700
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.900  10.112 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.843   4.609  10.756 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.492   4.375  11.533 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.291   3.013  10.781 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.638   3.237  10.008 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.418   2.495  11.150 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.621   3.856  11.902 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.071   2.268  11.923 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.273   3.633  12.673 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        5
+USER    Run = 5
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.76 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.553908 3.704929 11.207227
+USER    NEWDPF quaternion0 0.003579 -0.261287 -0.540134 -0.799982
+USER    NEWDPF axisangle0 0.005965 -0.435462 -0.900187 -73.743192
+USER    NEWDPF quat0 0.005965 -0.435462 -0.900187 -73.743192
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.915  10.150 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.847   4.613  10.773 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.502   4.364  11.555 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.296   3.016  10.780 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.638   3.254  10.002 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.426   2.491  11.125 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.633   3.839  11.901 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.084   2.251  11.903 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.291   3.601  12.677 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        6
+USER    Run = 6
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.41 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.565252 3.704941 11.207264
+USER    NEWDPF quaternion0 0.001873 -0.260942 -0.542379 -0.798581
+USER    NEWDPF axisangle0 0.003112 -0.433539 -0.901130 -74.010420
+USER    NEWDPF quat0 0.003112 -0.433539 -0.901130 -74.010420
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.918  10.149 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.854   4.614  10.773 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.509   4.358  11.553 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.312   3.008  10.779 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.654   3.253  10.003 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.444   2.496  11.128 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.642   3.846  11.902 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.103   2.249  11.904 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.300   3.601  12.676 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        7
+USER    Run = 7
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.32 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.565719 3.706931 11.199702
+USER    NEWDPF quaternion0 0.005316 0.259813 0.543087 0.798452
+USER    NEWDPF axisangle0 0.008830 0.431541 0.902050 74.035019
+USER    NEWDPF quat0 0.008830 0.431541 0.902050 74.035019
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.913  10.126 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.854   4.613  10.759 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.503   4.358  11.529 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.320   2.999  10.766 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.668   3.244  10.001 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.452   2.502  11.141 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.635   3.861  11.903 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.104   2.255  11.906 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.287   3.617  12.667 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        8
+USER    Run = 8
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.18 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.570609 3.710610 11.203258
+USER    NEWDPF quaternion0 0.005504 0.262257 0.542768 0.797868
+USER    NEWDPF axisangle0 0.009131 0.435042 0.900364 74.145994
+USER    NEWDPF quat0 0.009131 0.435042 0.900364 74.145994
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.914  10.120 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.857   4.615  10.758 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -4.509   4.363  11.535 -0.53 -0.00    +0.004 A 
+ATOM      4  C           0      -4.323   3.002  10.777 -0.67 -0.00    +0.001 A 
+ATOM      5  C           0      -5.668   3.244  10.005 -0.69 -0.00    +0.004 A 
+ATOM      6  C           0      -6.456   2.506  11.144 -0.60 +0.00    +0.001 A 
+ATOM      7  C           0      -6.643   3.867  11.902 -0.47 +0.00    +0.004 A 
+ATOM      8  C           0      -5.112   2.261  11.916 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -5.298   3.625  12.672 -0.49 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL        9
+USER    Run = 9
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  219.26 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.574231 3.697126 11.200472
+USER    NEWDPF quaternion0 -0.693590 0.342924 -0.496545 -0.393420
+USER    NEWDPF axisangle0 -0.754428 0.373004 -0.540099 -133.665087
+USER    NEWDPF quat0 -0.754428 0.373004 -0.540099 -133.665087
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   5.908  10.131 -0.72 -0.00    +0.016 C 
+ATOM      2  C           0      -5.859   4.605  10.761 -0.58 +0.00    -0.030 A 
+ATOM      3  C           0      -5.682   3.236  10.001 -0.69 -0.00    +0.004 A 
+ATOM      4  C           0      -6.467   2.497  11.141 -0.60 +0.00    +0.001 A 
+ATOM      5  C           0      -6.642   3.856  11.906 -0.47 +0.00    +0.004 A 
+ATOM      6  C           0      -5.293   3.603  12.667 -0.49 +0.00    +0.001 A 
+ATOM      7  C           0      -4.507   4.342  11.529 -0.53 -0.00    +0.004 A 
+ATOM      8  C           0      -5.118   2.242  11.904 -0.55 +0.00    +0.000 A 
+ATOM      9  C           0      -4.334   2.984  10.763 -0.67 -0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
+MODEL       10
+USER    Run = 10
+USER    DPF = a.dpf
+USER  
+USER    Estimated Free Energy of Binding    =   -4.99 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  221.01 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.29 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   -5.29 kcal/mol
+USER        Electrostatic Energy            =   +0.00 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.30 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER    NEWDPF move sub.pdbqt
+USER    NEWDPF about 0.065000 0.000000 -0.000000
+USER    NEWDPF tran0 -5.608069 3.948561 11.175979
+USER    NEWDPF quaternion0 0.692793 -0.604388 -0.073081 -0.386538
+USER    NEWDPF axisangle0 0.751180 -0.655324 -0.079241 -134.521441
+USER    NEWDPF quat0 0.751180 -0.655324 -0.079241 -134.521441
+USER  keepresnum = 1 
+USER  
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK       I    between atoms: C_8  and  C_9 
+USER                              x       y       z     vdW  Elec       q    Type
+USER                           _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C           0      -6.268   6.230  10.242 -0.75 -0.00    +0.016 C 
+ATOM      2  C           0      -5.879   4.885  10.792 -0.57 +0.00    -0.030 A 
+ATOM      3  C           0      -6.666   4.087  11.901 -0.46 +0.00    +0.004 A 
+ATOM      4  C           0      -5.316   3.766  12.632 -0.48 -0.00    +0.001 A 
+ATOM      5  C           0      -4.526   4.554  11.529 -0.51 -0.00    +0.004 A 
+ATOM      6  C           0      -4.386   3.237  10.687 -0.67 -0.00    +0.001 A 
+ATOM      7  C           0      -5.735   3.558   9.954 -0.68 -0.00    +0.004 A 
+ATOM      8  C           0      -5.174   2.448  11.790 -0.56 +0.00    +0.000 A 
+ATOM      9  C           0      -6.524   2.771  11.058 -0.60 +0.00    +0.001 A 
+ENDROOT
+TORSDOF 1
+TER
+ENDMDL
