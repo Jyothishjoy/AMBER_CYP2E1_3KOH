@@ -33,3 +33,10 @@
    `./autodock4.exe -p a.dpf -l a.dlg &`
     
 8. Everything should work fine.
+
+9. Analyzes Autodock calculations:
+  `a.	Open docking output: “Analyze → Dockings → Open”.
+  b.	Show cluster: “Analyze → Clusterings → Show”.
+  c.	Show conformations: “Analyze → Conformations → Play, ranked by energy”.
+  d.	Choose the first cluster, then click “&” to open Set Play Options. Click on “Write Current” to save the best structure of substrate, then save “sub_dock.pdbqt” file.`
+
