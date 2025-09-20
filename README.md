@@ -9,12 +9,12 @@ Classical MD simulation is a precious computational tool to investigate the proc
 
 	        fetch 3koh
   	
-5.	In Pymol, enable "Display → Sequence", then “Display → Sequence Mode → Residue Names”, we will see there are several missing (grey) residues. There are several residues missing in both  terminals of enzymes. You can also see some unnecessary molecules.
-6.	Remove chain B, unnecessary molecules, and save pdb file:
+3.	In Pymol, enable "Display → Sequence", then “Display → Sequence Mode → Residue Names”, we will see there are several missing (grey) residues. There are several residues missing in both  terminals of enzymes. You can also see some unnecessary molecules.
+4.	Remove chain B, unnecessary molecules, and save pdb file:
     
-    remove chain B
-    remove resname OIO
-    save 3koh_chainA.pdb
+    	remove chain B
+    	remove resname OIO
+    	save 3koh_chainA.pdb
 
 7.	Save HEME and crystal water as separate pdb files:
 8.	
