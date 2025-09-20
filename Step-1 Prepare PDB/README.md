@@ -66,15 +66,15 @@
 
 8. Add oxygen to the Fe-heme unit.
  
-	i. Open HEM.pdb in GaussView and add oxygen above the Fe in the correct orientation. Check with the original pdb file to decide which direction "O" should go.
+		i. Open HEM.pdb in GaussView and add oxygen above the Fe in the correct orientation. Check with the original pdb file to decide which direction "O" should go.
 
-	ii. Save this file as a "HEM_oxo.pdb" file.
+		ii. Save this file as a "HEM_oxo.pdb" file.
 
-	iii. Opening "HEM_oxo.pdb" in PyMol shows no bond between Fe and O.
+		iii. Opening "HEM_oxo.pdb" in PyMol shows no bond between Fe and O.
 
-	iv. To solve this connectivity issue, simply copy the coordinate position of the oxo and paste it into the original HEM.pdb file. Add corresponding connectivity information at the bottom of the HEM.pdb file.
+		iv. To solve this connectivity issue, simply copy the coordinate position of the oxo and paste it into the original HEM.pdb file. Add corresponding connectivity information at the bottom of the HEM.pdb file.
 
-	v. Now, save as "HEM_oxo.pdb".
+		v. Now, save as "HEM_oxo.pdb".
 
 11. Open “3koh_add_residues.pdb” and "HEM_oxo.pdb" in PyMol and combine all the files;
 
