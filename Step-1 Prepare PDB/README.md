@@ -53,7 +53,9 @@
 	f.	Open ModLoop using Web Browser:
 
 	i.	In “Modeller license key”, enter “MODELIRANJE”.
+
 	ii.	In “Upload coordinate file”, choose “3koh_missing_residues.pdb”.
+
 	iii.	In “Enter loop segments”, provide following information, then “Process”.
 
 			0:A:9:A:
