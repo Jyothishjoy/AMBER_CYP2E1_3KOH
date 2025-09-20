@@ -6,13 +6,13 @@ Classical MD simulation is a precious computational tool to investigate the proc
 ## Step 1. Prepare PDB file.
 1.	Download the “3KOH.pdb” from Protein Data Bank (https://www.rcsb.org/). Open "3koh.pdb" in a text editor. Read the "REMARK" section for useful information, such as the original reference, "RESOLUTION", "MISSING RESIDUES", and "MISSING ATOM".
 2.	Open Pymol:
-  fetch 3koh
+    fetch 3koh
 3.	In Pymol, enable "Display → Sequence", then “Display → Sequence Mode → Residue Names”, we will see there are several missing (grey) residues. There are several residues missing in both  terminals of enzymes. You can also see some unnecessary molecules.
 4.	Remove chain B, unnecessary molecules, and save pdb file:
     
-  remove chain B
-  remove resname OIO
-  save 3koh_chainA.pdb
+    remove chain B
+    remove resname OIO
+    save 3koh_chainA.pdb
 
 7.	Save HEME and crystal water as separate pdb files:
 8.	
