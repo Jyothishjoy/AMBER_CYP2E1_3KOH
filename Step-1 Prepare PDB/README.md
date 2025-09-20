@@ -74,6 +74,10 @@
 
 		iv. To solve this connectivity issue, simply copy the coordinate position of the oxo and paste it into the original HEM.pdb file. Add corresponding connectivity information at the bottom of the HEM.pdb file.
 
+				HETATM   44  O   HEM A 500      -3.532   5.697   9.011  1.00 33.67      C    O
+   				..............
+   				CONECT   43   44
+
 		v. Now, save as "HEM_oxo.pdb".
 
 11. Open “3koh_add_residues.pdb” and "HEM_oxo.pdb" in PyMol and combine all the files;
