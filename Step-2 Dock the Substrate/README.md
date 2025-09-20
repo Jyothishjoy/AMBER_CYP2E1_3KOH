@@ -7,7 +7,7 @@
   
 2. Prepare substrate:
    
-       a. Optimize substrate using DFT. Save as pdb file using Gaussview (“sub.pdb”).
+`Optimize substrate using DFT. Save as pdb file using Gaussview (“sub.pdb”)`
 
 3. A useful tip for preparing the enzyme:
  
