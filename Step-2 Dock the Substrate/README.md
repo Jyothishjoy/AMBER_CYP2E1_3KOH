@@ -11,11 +11,11 @@
 
 3. A useful tip for preparing the enzyme:
  
-      a. In AutoDockTools menu bar, “File → Read Molecule”, choose “3koh_combined.pdb”.
-
-      b. Delete water molecules: “Select → Select From String → type ‘HOH*’ in Residues → Add →       Dismiss”, then “Edit → Delete → Delete Selected Atoms → Continue”.
-  
-      c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.
+         a. In AutoDockTools menu bar, “File → Read Molecule”, choose “3koh_combined.pdb”.
+   
+         b. Delete water molecules: “Select → Select From String → type ‘HOH*’ in Residues → Add →       Dismiss”, then “Edit → Delete → Delete Selected Atoms → Continue”.
+     
+         c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.
 
 4. Follow the steps exactly as described in the Autodock Tutorial.pdf
 
