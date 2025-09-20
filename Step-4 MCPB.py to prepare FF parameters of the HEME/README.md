@@ -18,7 +18,7 @@
         loadCoordinates 3koh_enzyme.crd
         outpdb 3koh_Hpp.pdb
 
-6. Run **parmed** to generate the "3koh_Hpp.pdb" file
+6. Run **parmed** tool in WSL2 to generate the "3koh_Hpp.pdb" file
 
         parmed -i convert.inp
 
