@@ -1,4 +1,6 @@
-### Read Autodock Tutorial.pdf
+# Dock the Substrate
+
+**Read Autodock Tutorial.pdf**
 
 1. Download
    
