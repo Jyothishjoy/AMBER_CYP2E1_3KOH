@@ -22,6 +22,6 @@
 
         parmed -i convert.inp
 
-7. 
+7. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms, the hystidine sulfur has a proton, which is not meaningful. 
 
 
