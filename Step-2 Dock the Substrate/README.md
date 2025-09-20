@@ -17,11 +17,11 @@
      
          c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.
 
-4. Follow the steps exactly as described in the *Autodock Tutorial.pdf*
+4. Follow the steps exactly as described in the **Autodock Tutorial.pdf**
 
-5. Don't forget to copy *autogrid4.exe* and *autodock4.exe* into the current working directory. This will make their execution much easier through WSL2 (Ubuntu).
+5. Don't forget to copy **autogrid4.exe** and **autodock4.exe** into the current working directory. This will make their execution much easier through WSL2 (Ubuntu).
 
-6. Use WSL2 to navigate to the files and executables located.
+6. Through WSL2, navigate to the location of the files and executables.
 
 7. Run autogrid and autodock as described in the paper.
    
