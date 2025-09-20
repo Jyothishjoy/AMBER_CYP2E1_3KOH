@@ -4,9 +4,9 @@
 
 1. Download
   
-**Autodock4** (https://autodock.scripps.edu/download-autodock4/)
+    **Autodock4** (https://autodock.scripps.edu/download-autodock4/)
 
-**Autodock Tools** (https://ccsb.scripps.edu/mgltools/downloads/)
+    **Autodock Tools** (https://ccsb.scripps.edu/mgltools/downloads/)
   
 2. Prepare substrate:
    
