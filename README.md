@@ -16,42 +16,37 @@ Classical MD simulation is a precious computational tool to investigate the proc
     	remove resname OIO
     	save 3koh_chainA.pdb
 
-7.	Save HEME and crystal water as separate pdb files:
-8.	
-save HEM.pdb, resname HEM
-save water.pdb, resname HOH
+5.	Save HEME and crystal water as separate pdb files:
+	
+		save HEM.pdb, resname HEM
+		save water.pdb, resname HOH
 
-10.	Add missing residues by using ModLoop (https://modbase.compbio.ucsf.edu/modloop/):
-a.	Open “3koh_chainA.pdb” in text editor (Notepad++).
-b.	Remove line with “ANISOU” information:
-i.	Go to the search menu, “Ctrl + F”, and open the “Mark” tab.
-ii.	Check “Bookmark line”.
-iii.	Enter “ANISOU” in Find what: box, then click “Mark All”.
-iv.	Menu “Search → Bookmark → Remove Bookmarked lines”.
-c.	Add those lines in line 2. Note: The coordinates here are arbitrary.
+6.	Add missing residues by using ModLoop (https://modbase.compbio.ucsf.edu/modloop/):
+	a.	Open “3koh_chainA.pdb” in text editor (Notepad++).
+	b.	Remove line with “ANISOU” information:
+		i.	Go to the search menu, “Ctrl + F”, and open the “Mark” tab.
+		ii.	Check “Bookmark line”.
+		iii.	Enter “ANISOU” in Find what: box, then click “Mark All”.
+		iv.	Menu “Search → Bookmark → Remove Bookmarked lines”.
+	c.	Add those lines in line 2. Note: The coordinates here are arbitrary.
 
-ATOM      1  N   GLY A   0      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   HIS A   1      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   MET A   2      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   GLY A   3      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   VAL A   4      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   ALA A   5      22.461  54.692  21.092  1.00 49.65      A    N  
-ATOM      1  N   VAL A   6      22.461  54.692  21.092  1.00 49.65      A    N 
+		ATOM      1  N   MET A  22     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   ALA A  23     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   LYS A  24     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   LYS A  25     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   THR A  26     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   SER A  27     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   SER A  28     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   LYS A  29     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   GLY A  30     -32.912  -5.119  -3.220  1.00 50.32      A    N
+		ATOM      1  N   LYS A  31     -32.912  -5.119  -3.220  1.00 50.32      A    N 
 
 d.	Add those lines after line contain formation of last residues (now is line 6711):
 
-ATOM   6697  N   ARG A 435      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   GLN A 436      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   THR A 437      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   ALA A 438      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   ARG A 439      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   PRO A 440      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   GLY A 441      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   PRO A 442      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   VAL A 443      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   GLY A 444      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   GLY A 445      35.873  96.389  30.298  1.00 35.63      A    N  
-ATOM   6697  N   CYS A 446      35.873  96.389  30.298  1.00 35.63      A    N  
+		ATOM   3777  OG  HIS A 494      29.574  -0.850  15.832  1.00 51.99      A    O 
+		ATOM   3777  OG  HIS A 495      29.574  -0.850  15.832  1.00 51.99      A    O
+		ATOM   3777  OG  HIS A 496      29.574  -0.850  15.832  1.00 51.99      A    O
+		ATOM   3777  OG  HIS A 497      29.574  -0.850  15.832  1.00 51.99      A    O  
 
 e.	Rename file to “4x8b_missing_residues.pdb” by “File → Save As”.
 f.	Open ModLoop using Web Browser:
