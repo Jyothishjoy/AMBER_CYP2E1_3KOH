@@ -11,11 +11,11 @@
 
 3. A useful tip for preparing the enzyme:
  
-         a. In AutoDockTools menu bar, “File → Read Molecule”, choose “3koh_combined.pdb”.
+   `a. In AutoDockTools menu bar, “File → Read Molecule”, choose “3koh_combined.pdb”.`
    
-         b. Delete water molecules: “Select → Select From String → type ‘HOH*’ in Residues → Add →       Dismiss”, then “Edit → Delete → Delete Selected Atoms → Continue”.
+   `b. Delete water molecules: “Select → Select From String → type ‘HOH*’ in Residues → Add →       Dismiss”, then “Edit → Delete → Delete Selected Atoms → Continue”.`
      
-         c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.
+   `c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.`
 
 4. Follow the steps exactly as described in the **Autodock Tutorial.pdf**
 
@@ -25,8 +25,8 @@
 
 7. Run autogrid and autodock as described in the paper.
    
-         ./autogrid4.exe -p a.gpf -l a.glg &
+   `./autogrid4.exe -p a.gpf -l a.glg &`
    
-         ./autodock4.exe -p a.dpf -l a.dlg &
+   `./autodock4.exe -p a.dpf -l a.dlg &`
     
 8. Everything should work fine.
