@@ -1,4 +1,4 @@
-### Read *Autodock Tutorial.pdf*
+### Read Autodock Tutorial.pdf
 
 1. Download
    
