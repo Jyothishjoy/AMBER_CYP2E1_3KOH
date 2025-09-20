@@ -52,17 +52,17 @@
 
 	f.	Open ModLoop using Web Browser:
 
-	i.	In “Modeller license key”, enter “MODELIRANJE”.
+		i.	In “Modeller license key”, enter “MODELIRANJE”.
 
-	ii.	In “Upload coordinate file”, choose “3koh_missing_residues.pdb”.
+		ii.	In “Upload coordinate file”, choose “3koh_missing_residues.pdb”.
 
-	iii.	In “Enter loop segments”, provide following information, then “Process”.
+		iii.	In “Enter loop segments”, provide following information, then “Process”.
 
-			0:A:9:A:
-			494:A:497:A:
+				0:A:9:A:
+				494:A:497:A:
   	
-	iv.	Save pdb file from ModLoop as “3koh_add_residues.pdb”.
-	Note: Pymol can also add residues (https://www.youtube.com/watch?v=JWqIBKQUgn8).
+		iv.	Save pdb file from ModLoop as “3koh_add_residues.pdb”.
+		Note: Pymol can also add residues (https://www.youtube.com/watch?v=JWqIBKQUgn8).
 
 8. Add oxygen to the Fe-heme unit.
  
