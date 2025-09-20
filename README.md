@@ -41,20 +41,22 @@ Classical MD simulation is a precious computational tool to investigate the proc
 		ATOM      1  N   GLY A  30     -32.912  -5.119  -3.220  1.00 50.32      A    N
 		ATOM      1  N   LYS A  31     -32.912  -5.119  -3.220  1.00 50.32      A    N 
 
-d.	Add those lines after line contain formation of last residues (now is line 6711):
+	d.	Add those lines after line contain formation of last residues (now is line 3787):
 
 		ATOM   3777  OG  HIS A 494      29.574  -0.850  15.832  1.00 51.99      A    O 
 		ATOM   3777  OG  HIS A 495      29.574  -0.850  15.832  1.00 51.99      A    O
 		ATOM   3777  OG  HIS A 496      29.574  -0.850  15.832  1.00 51.99      A    O
 		ATOM   3777  OG  HIS A 497      29.574  -0.850  15.832  1.00 51.99      A    O  
 
-e.	Rename file to “4x8b_missing_residues.pdb” by “File → Save As”.
-f.	Open ModLoop using Web Browser:
-i.	In “Modeller license key”, enter “MODELIRANJE”.
-ii.	In “Upload coordinate file”, choose “4x8b_missing_residues.pdb”.
-iii.	In “Enter loop segments”, provide following information, then “Process”.
-0:A:6:A:
-435:A:446:A:
-iv.	Save pdb file from ModLoop as “4x8b_add_residues.pdb”.
+	e.	Rename file to “3koh_missing_residues.pdb” by “File → Save As”.
+	f.	Open ModLoop using Web Browser:
+		i.	In “Modeller license key”, enter “MODELIRANJE”.
+		ii.	In “Upload coordinate file”, choose “3koh_missing_residues.pdb”.
+		iii.	In “Enter loop segments”, provide following information, then “Process”.
+
+		0:A:9:A:
+		494:A:497:A:
+  	
+iv.	Save pdb file from ModLoop as “3koh_add_residues.pdb”.
 Note: Pymol can also add residues (https://www.youtube.com/watch?v=JWqIBKQUgn8).
 
