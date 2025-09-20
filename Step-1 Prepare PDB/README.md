@@ -56,7 +56,7 @@
 		Note: Pymol can also add residues (https://www.youtube.com/watch?v=JWqIBKQUgn8).
 
 8. Add oxygen to the Fe-heme unit.
-9. 
+ 
 	i. Open HEM.pdb in GaussView and add oxygen above the Fe in the correct orientation. Check with the original pdb file to decide which direction "O" should go.
 
 	ii. Save this file as a "HEM_oxo.pdb" file.
