@@ -19,10 +19,15 @@
 6.	Add missing residues by using ModLoop (https://modbase.compbio.ucsf.edu/modloop/):
 	a.	Open “3koh_chainA.pdb” in text editor (Notepad++).
 	b.	Remove line with “ANISOU” information:
+
 		i.	Go to the search menu, “Ctrl + F”, and open the “Mark” tab.
+
 		ii.	Check “Bookmark line”.
+
 		iii.	Enter “ANISOU” in Find what: box, then click “Mark All”.
+
 		iv.	Menu “Search → Bookmark → Remove Bookmarked lines”.
+
 	c.	Add those lines in line 2. Note: The coordinates here are arbitrary.
 
 		ATOM      1  N   MET A  22     -32.912  -5.119  -3.220  1.00 50.32      A    N
@@ -49,8 +54,8 @@
 		ii.	In “Upload coordinate file”, choose “3koh_missing_residues.pdb”.
 		iii.	In “Enter loop segments”, provide following information, then “Process”.
 
-		0:A:9:A:
-		494:A:497:A:
+			0:A:9:A:
+			494:A:497:A:
   	
 		iv.	Save pdb file from ModLoop as “3koh_add_residues.pdb”.
 		Note: Pymol can also add residues (https://www.youtube.com/watch?v=JWqIBKQUgn8).
