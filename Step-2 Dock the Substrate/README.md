@@ -19,3 +19,14 @@
 
 4. Follow the steps exactly as described in the *Autodock Tutorial.pdf*
 
+5. Don't forget to copy *autogrid4.exe* and *autodock4.exe* into the current working directory. This will make their execution much easier through WSL2 (Ubuntu).
+
+6. Use WSL2 to navigate to the files and executables located.
+
+7. Run autogrid and autodock as described in the paper.
+   
+         ./autogrid4.exe -p a.gpf -l a.glg &
+   
+         ./autodock4.exe -p a.dpf -l a.dlg &
+    
+8. Everything should work fine.
