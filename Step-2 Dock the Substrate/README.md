@@ -3,9 +3,9 @@
 **Read Autodock Tutorial.pdf (https://pmc.ncbi.nlm.nih.gov/articles/PMC4669947/)**
 
 1. Download
-   
-`**Autodock4** (https://autodock.scripps.edu/download-autodock4/)`
-`**Autodock Tools** (https://ccsb.scripps.edu/mgltools/downloads/)`
+  
+**Autodock4** (https://autodock.scripps.edu/download-autodock4/)
+**Autodock Tools** (https://ccsb.scripps.edu/mgltools/downloads/)
   
 2. Prepare substrate:
    
