@@ -17,5 +17,5 @@
      
          c. Add hydrogen: “Edit → Hydrogens → Add → Polar Only → OK”.
 
-4. Follow the steps exactly as described in the Autodock Tutorial.pdf
+4. Follow the steps exactly as described in the *Autodock Tutorial.pdf*
 
