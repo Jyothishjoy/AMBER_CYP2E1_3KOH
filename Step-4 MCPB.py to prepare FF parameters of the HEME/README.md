@@ -10,23 +10,23 @@
   	    remove resname HOH
   	    save 3koh_enzyme.pdb, 3koh_combined
 
-4.	Use H++ server to determine protonation state of enzyme: upload “3koh_enzyme.pdb” using the “Process File”. The default value can be used, then “PROCESS”. Download the top and crd file (“3koh_enzyme.top”, “3koh_enzyme.crd”) and convert to pdb file.
+3.	Use H++ server to determine protonation state of enzyme: upload “3koh_enzyme.pdb” using the “Process File”. The default value can be used, then “PROCESS”. Download the top and crd file (“3koh_enzyme.top”, “3koh_enzyme.crd”) and convert to pdb file.
 
-5.	Make **convert.inp** file for parameter editor.
+4.	Make **convert.inp** file for parameter editor.
 
         parm 3koh_enzyme.top
         loadCoordinates 3koh_enzyme.crd
         outpdb 3koh_Hpp.pdb
 
-6. Run **parmed** tool in AmberTools to generate the "3koh_Hpp.pdb" file
+5. Run **parmed** tool in AmberTools to generate the "3koh_Hpp.pdb" file
 
         parmed -i convert.inp
 
-7. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. Hence, the hystidine sulfur has a proton, which is not meaningful.
+6. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. Hence, the hystidine sulfur has a proton, which is not meaningful.
 
-8. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
+7. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
 
-9. Configure HEME parameters:
+8. Configure HEME parameters:
 
          Open the Heme.pdb extracted from Step 2 using GaussView. Accept "add Hydrogen" prompt. Double-check the hydrogens, as GaussView occasionally adds additional hydrogens (e.g., an H atom is added to an O atom).
    
@@ -45,7 +45,8 @@
          noatoms atoms=44-74 will optimize the positions of all hydrogens by keeping everything else frozen.
 
 
-10. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
+
+9. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
   
 
          
