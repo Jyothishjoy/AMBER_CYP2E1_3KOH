@@ -22,6 +22,10 @@
 
         parmed -i convert.inp
 
-7. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. Hence, the hystidine sulfur has a proton, which is not meaningful. 
+7. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. Hence, the hystidine sulfur has a proton, which is not meaningful.
+
+8. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
+
+9. 
 
 
