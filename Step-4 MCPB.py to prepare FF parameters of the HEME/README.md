@@ -42,7 +42,12 @@
          (Guassian genecp format here – [SDD-6-31G*])
 
 
-         noatoms atoms=44-74 will optimize the positions of all hydrogens by keeping everytihing else frozen.
+         noatoms atoms=44-74 will optimize the positions of all hydrogens by keeping everything else frozen.
+
+   10. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
+  
+
+         
 
 
 
