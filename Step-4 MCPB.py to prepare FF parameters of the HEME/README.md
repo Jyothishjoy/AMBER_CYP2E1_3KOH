@@ -28,7 +28,7 @@
 
 8. Also fixed the HID-349 hydrogen position. The hydrogen of the HID-349 residue that directly interacting with COO- group of the HEME unit was not correctly positioned. This is because the H++ served saw only the enzyme backbone. I used GaussView to fix this using the following procedure.
 
-         Manually delete the wrong-positioned HID-349 proton from 3KOH_enzyme_Hpp. Open this file in GaussView and follow https://gaussian.com/tip2/.
+         Manually delete the wrong-positioned HID-349 proton from 3KOH_enzyme_Hpp.pdb using Notepad++. Then opened this file in GaussView and followed https://gaussian.com/tip2/.
 
          After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. 
 
