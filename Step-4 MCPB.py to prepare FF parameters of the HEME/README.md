@@ -4,7 +4,7 @@
 
 2.	Extract HEM and waters.
    
-        save HEM.pdb, resname HEM
+       save HEM.pdb, resname HEM
   	    save water.pdb, resname HOH
   	    remove resname HEM
   	    remove resname HOH
@@ -26,6 +26,20 @@
 
 8. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
 
-9. 
+9. Configure HEME parameters:
+
+      Open the Heme.pdb extracted from Step 2 using GaussView. Accept "add Hydrogen" prompt. Double-check the hydrogens, as GaussView occasionally adds additional hydrogens (e.g., an H atom is added to an O atom).
+   
+      Optimize the position of added hydrogens via DFT using in the following Gaussian input.
+
+      
+      `%nprocshared=12
+      %mem=24GB
+      #p b3lyp/genecp nosymm opt=readopt
+      . . .
+      noatoms atoms=44-74
+
+      (Guassian genecp format here – [SDD-6-31G*])`
+
 
 
