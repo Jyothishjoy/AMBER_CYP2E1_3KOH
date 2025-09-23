@@ -26,7 +26,13 @@
 
 7. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
 
-8. Configure HEME parameters:
+8. Also fixed the HID-349 hydrogen position. The hydrogen of the HID-349 residue that directly interacting with COO- group of the HEME unit was not correctly positioned. This is because the H++ served saw only the enzyme backbone. I used GaussView to fix this using the following procedure.
+
+         Manually delete the wrong-positioned HID-349 proton from 3KOH_enzyme_Hpp. Open this file in GaussView and follow https://gaussian.com/tip2/.
+
+         After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. 
+
+10. Configure HEME parameters:
 
          Open the Heme.pdb extracted from Step 2 using GaussView. Accept "add Hydrogen" prompt. Double-check the hydrogens, as GaussView occasionally adds additional hydrogens (e.g., an H atom is added to an O atom).
    
@@ -46,7 +52,7 @@
 
 
 
-9. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
+11. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
   
 
          
