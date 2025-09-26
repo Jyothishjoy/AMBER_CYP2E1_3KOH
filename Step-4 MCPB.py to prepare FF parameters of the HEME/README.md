@@ -73,7 +73,8 @@ So, manually fix the FE.mol2 and OX.mol2 files accordingly. It then looks like,
 
 16. Copy sub.pdb, sub.mol2 and sub.frcmod from Step 3 to the current directory.
 
-17. Combine "3KOH_amber.pdb", "FE.pdb", "O.pdb", "HEM.pdb", "sub.pdb", and "water.pdb" 
+17. Combine "3KOH_amber.pdb", "FE.pdb", "O.pdb", "HEM.pdb", "sub.pdb", and "water.pdb"
+    
             cat  3KOH_amber.pdb FE.pdb O.pdb HEM.pdb sub.pdb water.pdb > 3KOH_composite.pdb
 
 Open the 3KOH_composite.pdb file and remove all unnecessary comment sections (from Gaussian). Feel free to rearrange their order as well. 
