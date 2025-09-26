@@ -4,11 +4,11 @@
 
 2.	Extract HEM and waters.
    
-       save HEM.pdb, resname HEM
-  	    save water.pdb, resname HOH
-  	    remove resname HEM
-  	    remove resname HOH
-  	    save 3koh_enzyme.pdb, 3koh_combined
+          save HEM.pdb, resname HEM
+  	       save water.pdb, resname HOH
+  	       remove resname HEM
+  	       remove resname HOH
+  	       save 3koh_enzyme.pdb, 3koh_combined
 
 3.	Use H++ server to determine protonation state of enzyme: upload “3koh_enzyme.pdb” using the “Process File”. The default value can be used, then “PROCESS”. Download the top and crd file (“3koh_enzyme.top”, “3koh_enzyme.crd”) and convert to pdb file.
 
