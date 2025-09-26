@@ -50,7 +50,13 @@
 
 
 
-12. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
+12. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files.
+
+14. Use metalpdb2mol2.py (script attached here) to convert FE.pdb to FE.mol2 and O.pdb to O.mol2. Use antechamber to convert HEM_ligand.pdb to HEM_ligand.mol2.
+
+       python3 metalpdb2mol2.py -i FE.pdb -o FE.mol2 -c 2
+       python3 metalpdb2mol2.py -i O.pdb -o OX.mol2 -c -2
+       antechamber -fi pdb -fo mol2 -i HEM.pdb -o HEM.mol2 -rn HEM -at gaff -pf y -c bcc -nc -4
   
 
          
