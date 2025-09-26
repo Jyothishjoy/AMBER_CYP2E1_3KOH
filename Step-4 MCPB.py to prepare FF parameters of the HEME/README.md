@@ -71,8 +71,16 @@ So, manually fix the FE.mol2 and OX.mol2 files accordingly. It then looks like,
 
             1 O          -3.5350    5.6860   9.0850  O         1 OX       -2.000000
 
+16. Copy sub.pdb, sub.mol2 and sub.frcmod from Step 3 to the current directory.
 
-16. 
+17. Combine "3KOH_amber.pdb", "FE.pdb", "O.pdb", "HEM.pdb", "sub.pdb", and "water.pdb" 
+            cat  3KOH_amber.pdb FE.pdb O.pdb HEM.pdb sub.pdb water.pdb > 3KOH_composite.pdb
+
+Open the 3KOH_composite.pdb file and remove all unnecessary comment sections (from Gaussian). Feel free to rearrange their order as well. 
+Always make sure that the  atom numbering for the HEM and substrate exactly matches their atom numbering in the mol2 files.  
+Fix any 	discrepancies using notepad++ (Windows) or notepadqq (Linux) to copy the atom numbering 	vertically. Alternatively, if you are processing bulk files it is possible to employ the Linux “sed” 	command when editing files. Ensure proper atom types (GAFF2).
+
+18. 
             
 
 
