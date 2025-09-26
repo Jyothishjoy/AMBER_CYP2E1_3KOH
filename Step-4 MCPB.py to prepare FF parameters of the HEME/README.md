@@ -83,7 +83,7 @@ Open the 3KOH_composite.pdb file and remove all unnecessary comment sections (fr
     
             pdb4amber -i 3KOH_composite.pdb -o 3KOH_amber.pdb
     
-Always make sure that the  atom numbering for the HEM and substrate exactly matches their atom numbering in the mol2 files.  
+Always make sure that the  atom numbering for the HEM and substrate exactly matches their atom numbering in the mol2 files. Also, make sure residue names and IDs are correct.
 Fix any 	discrepancies using notepad++ (Windows) or notepadqq (Linux) to copy the atom numbering 	vertically. Alternatively, if you are processing bulk files it is possible to employ the Linux “sed” 	command when editing files. Ensure proper atom types (GAFF2).
 
  
