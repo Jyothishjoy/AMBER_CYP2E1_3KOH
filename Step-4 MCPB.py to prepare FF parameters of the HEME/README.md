@@ -80,6 +80,7 @@ So, manually fix the FE.mol2 and OX.mol2 files accordingly. It then looks like,
 Open the 3KOH_composite.pdb file and remove all unnecessary comment sections (from Gaussian). Feel free to rearrange their order as well. 
 
 18. Renumber the composite file.
+    
             pdb4amber -i 3KOH_composite.pdb -o 3KOH_amber.pdb
     
 Always make sure that the  atom numbering for the HEM and substrate exactly matches their atom numbering in the mol2 files.  
