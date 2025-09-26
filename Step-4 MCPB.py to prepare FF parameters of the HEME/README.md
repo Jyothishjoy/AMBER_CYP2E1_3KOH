@@ -57,6 +57,25 @@
           python3 metalpdb2mol2.py -i FE.pdb -o FE.mol2 -c 2
           python3 metalpdb2mol2.py -i O.pdb -o OX.mol2 -c -2
           antechamber -fi pdb -fo mol2 -i HEM.pdb -o HEM.mol2 -rn HEM -at gaff -pf y -c bcc -nc -4
+
+Here we use metalpdb2mol2.py script to convert O.pdb simply because abtechamber expects to have more than one atom.
+Antechamber uses AM1 with -4 total charge to calculate the bcc charge distribution in the HEM ligand species (porphyrine). Finally, write the results into HEM.mol2 using bcc charges and amber/gaff atom types.
+
+15. Now, open HEM.mol2 file and compare its contents with FE.mol2 and OX.mol2. It seems like some items are missing from the FE.mol2 and OX.mol2 files. Ideally mol2 file should look like the following,
+
+            atom_id  atom_name  x  y  z  atom_type  residue_id  residue_name  charge
+
+So, manually fix the FE.mol2 and OX.mol2 files accordingly. It then looks like,
+
+            1 FE         -2.9090    5.6440    7.3760 FE        0 FE        2.000000
+
+            1 O          -3.5350    5.6860   9.0850  O         1 OX       -2.000000
+
+
+16. 
+            
+
+
   
 
          
