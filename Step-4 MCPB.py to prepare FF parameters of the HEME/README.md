@@ -41,12 +41,12 @@
          %mem=24GB
          #p b3lyp/genecp nosymm opt=readopt
          . . .
-         noatoms atoms=44-74
+         noatoms atoms=45-74
 
          (Guassian genecp format here – [SDD-6-31G*])
 
 
-         noatoms atoms=44-74 will optimize the positions of all hydrogens by keeping everything else frozen.
+         noatoms atoms=45-74 will optimize the positions of all hydrogens by keeping everything else frozen.
 
 
 
