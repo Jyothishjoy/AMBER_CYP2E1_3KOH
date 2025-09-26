@@ -22,17 +22,15 @@
 
         parmed -i convert.inp
 
-6. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. Hence, the hystidine sulfur has a proton, which is not meaningful.
+6. Open “3koh_Hpp.pdb” and “HEM.pdb” to double-check the protonation state. Because H++ does not consider the metal ion while adding hydrogen atoms. The CYS416 sulfur has a proton, which is not meaningful. Also, HID349 has a hydrogen on the wrong nitrogen. We know this because hydrogen on the other N makes a proper H-bond with the COO- of the HEM. This is because the H++ server saw only the enzyme backbone. 
 
-7. The Hydrogen of CYS416 (atom no: 6802) was removed as the S is directly bound to the Fe.
+7. To remove H on CYS416, in the PyMol GUI activate 3-Button mode to editing (option on the bottom right). Use the left mouse button to select the H on CYS416. Now, from the Build menu option, select "Remove(pk1)" 
 
-8. Also fixed the HID-349 hydrogen position. The hydrogen of the HID-349 residue that directly interacting with COO- group of the HEME unit was not correctly positioned. This is because the H++ served saw only the enzyme backbone. I used GaussView to fix this using the following procedure.
+8. Also fixed the HID349 hydrogen position. First, remove HID349/HD1 using the steps mentioned above. But, had some difficulty adding H on the other N.
 
-         Manually delete the wrong-positioned HID-349 proton from 3KOH_enzyme_Hpp.pdb using Notepad++. Then opened this file in GaussView and followed https://gaussian.com/tip2/.
+10. So, I opened the pdb file in Notepad++ and manually deleted the wrong-positioned CYS416 and HID349 protons from 3KOH_enzyme_Hpp.pdb using Notepad++. Then opened this file in GaussView and followed https://gaussian.com/tip2/. After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. Alternatively, from GaussView we can copy the new H coordinates and paste it into the original pdb file as well.
 
-         After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. 
-
-10. Configure HEME parameters:
+11. Configure HEME parameters:
 
          Open the Heme.pdb extracted from Step 2 using GaussView. Accept "add Hydrogen" prompt. Double-check the hydrogens, as GaussView occasionally adds additional hydrogens (e.g., an H atom is added to an O atom).
    
@@ -52,7 +50,7 @@
 
 
 
-11. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
+12. Open the log file in GaussView after optimizing the H positions. Save FE, HEM, and O as three separate pdb files. Use metalpdb2mol2.py to convert FE.pdb to FE.mol2. Use antechamber to convert to HEM_ligand.pdb and O.pdb to HEM_ligand.mol2 and O.mol2.
   
 
          
