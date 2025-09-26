@@ -78,10 +78,14 @@ So, manually fix the FE.mol2 and OX.mol2 files accordingly. It then looks like,
             cat  3KOH_amber.pdb FE.pdb O.pdb HEM.pdb sub.pdb water.pdb > 3KOH_composite.pdb
 
 Open the 3KOH_composite.pdb file and remove all unnecessary comment sections (from Gaussian). Feel free to rearrange their order as well. 
+
+18. Renumber the composite file.
+            pdb4amber -i 3KOH_composite.pdb -o 3KOH_amber.pdb
+    
 Always make sure that the  atom numbering for the HEM and substrate exactly matches their atom numbering in the mol2 files.  
 Fix any 	discrepancies using notepad++ (Windows) or notepadqq (Linux) to copy the atom numbering 	vertically. Alternatively, if you are processing bulk files it is possible to employ the Linux “sed” 	command when editing files. Ensure proper atom types (GAFF2).
 
-18. 
+ 
             
 
 
