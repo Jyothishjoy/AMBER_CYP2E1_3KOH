@@ -1,6 +1,6 @@
 After the production MD run from Step 5 using the literature parameters for the HEME part, clustering using KMeans is performed on the "3KOH_md.mdcrd" file using the cpptraj package.
 
-Used the following input file for the run.
+Used the following "cpptraj_clustering.in" file for the run.
 
     parm 3KOH_solv.prmtop
     trajin 3KOH_md.mdcrd
@@ -25,3 +25,11 @@ Used the following input file for the run.
       avgout avg avgfmt pdb
     
     run
+
+In the FSL, source `/apps/src/ambertools/24/amber24/amber.sh` to activate the AmberTools.
+
+then run `cpptraj cpptraj_clustering.in`
+
+This will generate 10 cluster files and their representative snapshots. We used the snapshot with the maximum population of frames by checking the `info.dat` file. 
+
+Correspondingly 'rep.c1.pdb' file will be used for further cluster modelling.
