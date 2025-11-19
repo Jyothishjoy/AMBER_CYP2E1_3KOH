@@ -28,7 +28,7 @@
 
 8. Also fixed the HID349 hydrogen position. First, remove HID349/HD1 using the steps mentioned above. But, had some difficulty adding H on the other N.
 
-10. So, I opened the pdb file in Notepad++ and manually deleted the wrong-positioned CYS416 and HID349 protons from 3KOH_enzyme_Hpp.pdb using Notepad++. Then opened this file in GaussView and followed https://gaussian.com/tip2/. After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. Alternatively, from GaussView we can copy the new H coordinates and paste it into the original pdb file as well.
+10. So, I opened the pdb file in Notepad++ and manually deleted the wrong-positioned CYS416 and HID349 protons from 3KOH_enzyme_Hpp.pdb using Notepad++. Then opened this file in GaussView and followed https://gaussian.com/tip2/. After identifying the residue, I manually added the proton at the correct N atom, and saved it as 3KOH_enzyme_Hpp_fix.pdb file. Alternatively, from GaussView we can copy the new H coordinates and paste it into the original pdb file as well. After the edit, don't forget to rename HID to HIE in the 3KOH_enzyme_Hpp_fix.pdb file. 
 
 11. Configure HEME parameters:
 
