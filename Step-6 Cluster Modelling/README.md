@@ -26,10 +26,10 @@ Used the following "cpptraj_clustering.in" file for the run.
     
     run
 
-In the FSL, source `/apps/src/ambertools/24/amber24/amber.sh` to activate the AmberTools.
+In the FSL, `source /apps/src/ambertools/24/amber24/amber.sh` to activate the AmberTools.
 
 then run `cpptraj cpptraj_clustering.in`
 
 This will generate 10 cluster files and their representative snapshots. We used the snapshot with the maximum population of frames by checking the `info.dat` file. 
 
-Correspondingly 'rep.c1.pdb' file will be used for further cluster modelling.
+Based on the information from `info.dat` file, 'rep.c1.pdb' file will be used for further cluster modelling.
