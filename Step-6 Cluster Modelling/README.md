@@ -32,4 +32,4 @@ then run `cpptraj cpptraj_clustering.in`
 
 This will generate 10 cluster files and their representative snapshots. We used the snapshot with the maximum population of frames by checking the `info.dat` file. 
 
-Based on the information from `info.dat` file, 'rep.c1.pdb' file will be used for further cluster modelling.
+Based on the information from `info.dat` file, 'avg.c1.pdb' file will be used for further cluster modelling.
