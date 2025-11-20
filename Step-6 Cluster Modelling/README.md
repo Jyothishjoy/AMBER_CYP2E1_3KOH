@@ -48,4 +48,11 @@ Sequence in the theozyme_10A.pdb is the following,
         -GLU281(-chrg)-THR282-THR283-THR285-THR286-LEU342-VAL343-ASN346-LEU347-PRO348-HIE349-LEU372-PRO408-PHE409-SER410
         -ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-PHE420-GLY421-HEM477-SUB478
 
-I deleted `LEU 189` and `LEU 372` because they are not required for reactivity.
+I deleted `LEU 189` and `LEU 372` because they are not required for reactivity. Saved the structure as 'theozyme_10A.pdb'. 
+Opened `theozyme_10A.pdb` in GaussView and changed −CO and −NH on the enzyme backbone to H. Saved the structure as `theozyme_10A_fixed.pdb`. 
+This structure has 3 cationic (`ARG79`, `ARG105`, and `ARG414`) and 3 anionic residues (`ASP274`, `GLU218` and `GLU419`). Hence, the overall charge of the complex is -2, coming from the two carboxylates of the HEME.
+
+Since the anionic residues have carboxylate functionality and is not stabilized by other H-bonds, I decided to protonate these residues.
+In GaussView, protonated the carboxylate functionalities of `ASP274`, `GLU218` and `GLU419`. Saved the protonated structure as `theozyme_10A_fixed_protonated_ASP274-GLU281-GLU419.pdb`
+Now the overall charge of the system is +1 (-2 from `HEME` and +3 from `ARG79`, `ARG105`, and `ARG414`).
+
