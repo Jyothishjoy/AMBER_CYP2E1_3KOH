@@ -48,3 +48,4 @@ Sequence in the theozyme_10A.pdb is the following,
         -GLU281(-chrg)-THR282-THR283-THR285-THR286-LEU342-VAL343-ASN346-LEU347-PRO348-HIE349-LEU372-PRO408-PHE409-SER410
         -ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-PHE420-GLY421-HEM477-SUB478
 
+I deleted `LEU 189` and `LEU 372` because they are not required for reactivity.
