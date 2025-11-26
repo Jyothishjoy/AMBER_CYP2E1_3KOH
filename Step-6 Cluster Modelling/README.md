@@ -61,8 +61,8 @@ Saving the final structure from GaussView as `pdb` file is useful, as it retains
 Since the model is reasonably large, G16 maynot be the ideal choice for full QM optimization. I will be using QM/xTB method implemented in Orca-6.1 for the geometry optimization.
 
 Step-I: Fix CA, CB, and HB atoms and run modredundant optimization to relax added cap H atoms.
-CA refers to the C atom that directly connects to the newly added cap H. CB refers to the C atom that connects to the CA atom. HB refers to the H atoms already attached to the CA, which are not the newly added cap H atoms. 
-To generate the input file, I froze CA, CAB, and HB atoms using GV. Then I saved this GV input file and copied the atom symbol and freeze/no-freeze identities (-1/0) using Notepad++ into an Excel sheet. Added a new column for atom numbers starting from 0. Then sort the Excel sheet in ascending order for the freeze/no-freeze column. Now, I have the Excel sheet with all ORCA atom numbers for the frozen coordinates. Then I prepared an ORCA input file using this information.
+CA refers to the C atom that directly connects to the newly added cap HA. CB refers to the C atom that connects to the CA atom. HB refers to the H atoms already attached to the CA, which are not the newly added cap HA atoms. 
+To generate the input file, I froze CA, CB, and HB atoms using GV. Then I saved this GV input file and copied the atom symbol and freeze/no-freeze identities (-1/0) using Notepad++ into an Excel sheet. Added a new column for atom numbers starting from 0. Then sort the Excel sheet in ascending order for the freeze/no-freeze column. Now, I have the Excel sheet with all ORCA atom numbers for the frozen coordinates. Then I prepared an ORCA input file using this information.
 
 Atom numbers in the QM region can be identified by selecting all the residues in ChemCraft and `View > Hide Certain Atoms > Hide Selected Atoms`. 
 Then the remaining atoms will be in the QM layer. I decided to use the basic porphyrine (all C-H) and an SH connected to the Fe as the simplest model for the P450 model, and everything else is moved to the xTB layer. In this way, I can keep the QM layer neutral-doublet. The overall charge is +1, and multiplicity is doublet. Careful about the placement of charge/multiplicity in the input file (two locations).
@@ -157,9 +157,10 @@ https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-m
          H          47.58700000   30.54000000   22.18300000 
          ..............
 
-Step-II: Run optimization by fixing the CA and cap H atoms. Following this calculation, the model will be ready for further use. In the second step, fix only the CA and newly added cap H atoms. Reoptimize the structure and perform a frequency calculation to ensure the system is at a minimum. 
+Step-II: Run optimization by fixing the CA and cap HA atoms only. After this calculation, the model will be ready for further use. 
+In the second step, fix only the CA and newly added cap HA atoms. Reoptimize the structure and perform a frequency calculation to ensure the system is at a minimum. This step can also use the `theozyme_10A_fixed_protonated_ASP274-GLU281-GLU419.pdb` file. The cap HA atoms and their immediately connected CA atoms can be easily visualized in GV (because HA are saved as HETATM), and freeze the desired ones using 'Tools > Atom Groups > Gaussian fragments.' It is also noted that some CA have two cap HA atoms. We need to freeze only one of those HA atoms to reduce optimization difficulties and minimize the number of constraints in our calculation.
 
-Step-III: Optimize the reactant and product complex and run an NEB-TS caculation to identify the TS structure.
+Step-III: Optimize the reactant and product complex and run an NEB-TS calculation to identify the TS structure.
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
 
 
