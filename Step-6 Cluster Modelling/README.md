@@ -155,4 +155,11 @@ https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-m
          H          47.45100000   32.91900000   21.96700000 
          H          45.87100000   32.37500000   21.98800000 
          H          47.58700000   30.54000000   22.18300000 
+         ..............
+
+Step-II: Run optimization by fixing the CA and cap H atoms. Following this calculation, the model will be ready for further use. In the second step, fix only the CA and newly added cap H atoms. Reoptimize the structure and perform a frequency calculation to ensure the system is at a minimum. 
+
+Step-III: Optimize the reactant and product complex and run an NEB-TS caculation to identify the TS structure.
+https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
+
 
