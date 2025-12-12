@@ -163,7 +163,7 @@ In the second step, fix only the CA and newly added cap HA atoms. Reoptimize the
 Step-III: Optimize the reactant and product complex and run an NEB-TS calculation to identify the TS structure.
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
 
-Step-IV: OPTTS of the TS structure using Compound Job
+Step-IV: OPTTS of the TS structure using Compound Job.
 Here, I am using a 3 strp compund job to reoptimize the TS. First job freezes the cubane and the Fe=O. Next job only freezes the key Fe-O, O-H, and C-H distances. The third job releases all the constraints and reoptimizes the TS. The TS calculation uses a hybrid Hessian for the active part of the TS and a model Hessian for the rest.
 
         * XYZfile 0 2 QMXTB_ORCA_NEB_NEB-CI_converged.xyz  # charge and mult. of the high level region # XYZ file from NEB-TS optimization but altered Fe-O, O-H and C-H distance for the gas phase TS structure
@@ -266,7 +266,6 @@ Here, I am using a 3 strp compund job to reoptimize the TS. First job freezes th
 
 
 Step-V: Partial Hessian Vibrational Analysis
-
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-general.html?q=PHVA&n=1#frequency-calculation
 
         !QM/XTB B3LYP/G D4 DEF2-SVP NumFreq
