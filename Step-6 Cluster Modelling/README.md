@@ -312,3 +312,105 @@ https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-g
         ..............
 
 
+Step VI: During the TS optimization we found that the TS looks very earlier compared to the PCM-TS optimized for just the FePor-methcubane complex. This prompted us to neutralize the system and recalculate the TS.
+We deprotonated H435 (Orca counting) of ARG414 to generate the neutral doublet system. Every atom count after 435 is now shifted to one unit down.
+
+        * XYZfile 0 2 QMXTB_ORCA_NEB_NEB-CI_converged_neutral.xyz  # charge and mult. of the high level region # XYZ file from NEB-TS optimization but altered Fe-O, O-H and C-H distance for the gas phase TS structure
+        
+        %maxcore 12000
+        %pal nprocs 24 end
+        
+        
+        %compound
+        # Step 1: constrained optimization by freezing the cubane and Fe=O
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPT 
+        
+        %QMMM 
+        QMATOMS { 458 520 525 528:532 537:541 544:547 550:559 574:577 590:608 } END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:480 482:485 487:492 494:511 513:608 610 614 616 623 631 } END
+        
+        Charge_Total  0         
+        Mult_Total    2         
+        
+        AutoFF_QM2_Method QM2   
+        END
+        
+        %geom 
+            Constraints
+                { C 559 C }
+                { C 541 C }
+                { C 600 C }
+                { C 590 C }
+                { C 599 C }
+                { C 601 C }
+                { C 591 C }
+                { C 592 C }
+                { C 602 C }
+                { C 598 C }
+                { C 608 C }
+                { C 593 C }
+                { C 603 C }
+                { C 597 C }
+                { C 607 C }
+                { C 595 C }
+                { C 505 C }
+                { C 596 C }
+                { C 606 C }
+                { C 594 C }
+                { C 604 C }
+            end
+        end
+        Step_End
+        
+        # Step 2: constrained optimization by freezing Fe-O, O-H and C-H bonds
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPT 
+        
+        %QMMM 
+        QMATOMS { 458 520 525 528:532 537:541 544:547 550:559 574:577 590:608 } END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:480 482:485 487:492 494:511 513:608 610 614 616 623 631 } END
+        
+        Charge_Total  0         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        END
+        
+        %geom 
+            Constraints
+        	    { B 559 541 C }
+                { B 541 600 C }
+                { B 590 600 C }
+            end
+        end
+        Step_End
+        
+        # Step 3: full TS optimization
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPTTS  NumFreq
+        
+        %QMMM 
+        QMATOMS { 458 520 525 528:532 537:541 544:547 550:559 574:577 590:608 } END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:480 482:485 487:492 494:511 513:608 610 614 616 623 631 } END
+        
+        Charge_Total  0         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        END
+        
+        %Geom
+        	Calc_Hess True
+        	Hybrid_Hess {541 559 590 592 599 600 601 } end
+        	MaxIter 500
+        end
+        
+        Step_End
+        
+        End
+
+
