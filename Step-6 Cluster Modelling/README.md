@@ -163,4 +163,48 @@ In the second step, fix only the CA and newly added cap HA atoms. Reoptimize the
 Step-III: Optimize the reactant and product complex and run an NEB-TS calculation to identify the TS structure.
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
 
+Step-IV: Partial Hessian Vibrational Analysis
+https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-general.html?q=PHVA&n=1#frequency-calculation
+
+        !QM/XTB B3LYP/G D4 DEF2-SVP NumFreq
+        
+        %maxcore 12000
+        %pal nprocs 24 end
+        
+        %QMMM 
+        QMATOMS {459 521 526 529:533 538:542 545:548 551:560 575:578 591:609} END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:481 483:486 488:493 495:512 514:609 611 615 617 624 632 } END
+        
+        Charge_Total  1         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        
+        END
+        
+        * XYZ 0 2   # charge and mult. of the high level region # XYZ file from Step-V-NEB/OPTTS-C_H-1_33/OPTTS-HybHess/ optimization
+        C    45.440001000000     32.874998000000     19.156001000000
+        C    46.594733000000     33.314638000000     20.047896000000
+        C    46.755789000000     32.452053000000     21.298681000000
+        C    47.369294000000     31.083354000000     20.989905000000
+        N    48.732211000000     31.225729000000     20.523667000000
+        C    49.250854000000     30.792342000000     19.370484000000
+        N    48.539049000000     30.169169000000     18.439300000000
+        N    50.538145000000     31.011699000000     19.119514000000
+        H    45.386271000000     31.791192000000     19.106993000000
+        H    47.526142000000     33.258577000000     19.480411000000
+        H    46.439250000000     34.354281000000     20.347550000000
+        H    47.415853000000     32.963176000000     22.001946000000
+        H    45.785755000000     32.306044000000     21.774401000000
+        H    47.378973000000     30.489879000000     21.909802000000
+        H    46.772837000000     30.548938000000     20.253607000000
+        H    49.332591000000     31.763054000000     21.141457000000
+        H    49.052264000000     29.816720000000     17.632908000000
+        H    47.607567000000     29.801492000000     18.586010000000
+        H    50.892670000000     30.644367000000     18.223217000000
+        H    51.125624000000     31.568243000000     19.726781000000
+        ..............
+        ..............
+
 
