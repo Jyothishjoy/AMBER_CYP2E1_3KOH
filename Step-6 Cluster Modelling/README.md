@@ -163,7 +163,109 @@ In the second step, fix only the CA and newly added cap HA atoms. Reoptimize the
 Step-III: Optimize the reactant and product complex and run an NEB-TS calculation to identify the TS structure.
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
 
-Step-IV: Partial Hessian Vibrational Analysis
+Step-IV: OPTTS of the TS structure using Compound Job
+Here, I am using a 3 strp compund job to reoptimize the TS. First job freezes the cubane and the Fe=O. Next job only freezes the key Fe-O, O-H, and C-H distances. The third job releases all the constraints and reoptimizes the TS. The TS calculation uses a hybrid Hessian for the active part of the TS and a model Hessian for the rest.
+
+        * XYZfile 0 2 QMXTB_ORCA_NEB_NEB-CI_converged.xyz  # charge and mult. of the high level region # XYZ file from NEB-TS optimization but altered Fe-O, O-H and C-H distance for the gas phase TS structure
+        
+        %maxcore 12000
+        %pal nprocs 24 end
+        
+        
+        %compound
+        # Step 1: constrained optimization by freezing the cubane and Fe=O
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPT 
+        
+        %QMMM 
+        QMATOMS {459 521 526 529:533 538:542 545:548 551:560 575:578 591:609} END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:481 483:486 488:493 495:512 514:609 611 615 617 624 632 } END
+        
+        Charge_Total  1         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        END
+        
+        %geom 
+            Constraints
+        	      { C 560 C }
+                { C 542 C }
+                { C 601 C } 
+                { C 591 C }
+                { C 600 C }
+                { C 602 C }
+                { C 592 C }
+                { C 593 C }
+                { C 603 C }
+                { C 599 C }
+                { C 609 C }
+                { C 594 C }
+                { C 604 C }
+                { C 598 C } 
+                { C 608 C }
+                { C 596 C }
+                { C 506 C }
+                { C 597 C }
+                { C 607 C }
+                { C 595 C }
+                { C 605 C }
+            end
+        end
+        Step_End
+        
+        # Step 2: constrained optimization by freezing Fe-O, O-H and C-H bonds
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPT 
+        
+        %QMMM 
+        QMATOMS {459 521 526 529:533 538:542 545:548 551:560 575:578 591:609} END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:481 483:486 488:493 495:512 514:609 611 615 617 624 632 } END
+        
+        Charge_Total  1         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        END
+        
+        %geom 
+            Constraints
+        	      { B 560 542 C }
+                { B 542 601 C }
+                { B 591 601 C }
+            end
+        end
+        Step_End
+        
+        # Step 3: full TS optimization
+        New_Step
+        ! QM/XTB B3LYP/G D4 DEF2-SVP OPTTS  NumFreq
+        
+        %QMMM 
+        QMATOMS {459 521 526 529:533 538:542 545:548 551:560 575:578 591:609} END 
+        
+        ActiveAtoms { 1:19 21:34 36:50 52:87 89:104 106:124 126:140 142:146 148:151 153:167 169:224 226:246 248:257 259:270 272:281 283:299 301:312 314:358 360:372 374:407 409:415 417:481 483:486 488:493 495:512 514:609 611 615 617 624 632 } END
+        
+        Charge_Total  1         # charge of the full system. 
+        Mult_Total    2         # multiplicity of the full system.
+        
+        AutoFF_QM2_Method QM2   # Toplogy for automatic identificatiion of boundary
+        END
+        
+        %Geom
+        	Calc_Hess True
+        	Hybrid_Hess {542 560 591 592 600 601 602 } end
+        	MaxIter 500
+        end
+        
+        Step_End
+        
+        End
+
+
+Step-V: Partial Hessian Vibrational Analysis
 
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-general.html?q=PHVA&n=1#frequency-calculation
 
