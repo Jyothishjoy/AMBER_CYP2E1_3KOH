@@ -164,6 +164,7 @@ Step-III: Optimize the reactant and product complex and run an NEB-TS calculatio
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#subtractive-qm-qm2-method-oniom2
 
 Step-IV: Partial Hessian Vibrational Analysis
+
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-general.html?q=PHVA&n=1#frequency-calculation
 
         !QM/XTB B3LYP/G D4 DEF2-SVP NumFreq
