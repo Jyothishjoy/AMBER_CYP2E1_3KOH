@@ -15,7 +15,7 @@
    
 4. Change `3-button-viewing` to `3-button-editing`.
    
-5. Use `SHIFT+Left Mouse Button' for rotation. Use `Cntrl+Middle Mouse Button' for translation of the whole structure or elongating a bond.
+5. Use `SHIFT+Left Mouse Button` for rotation. Use `Cntrl+Middle Mouse Button` for translation of the whole structure or elongating a bond.
 
 6. To check if the atoms after translation are clashing with any atoms of the amino acid residues, do the following.
   
