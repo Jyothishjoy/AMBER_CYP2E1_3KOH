@@ -27,11 +27,12 @@
 
 10. To do that, `Setting > Surface > Cavity Detection Radius > 3 Solvent Radii`. `Setting > Surface > Cavities and Pockets Only`
 
-11. Type, 
+11. Type,
+    
     show surface
     set transparency, 0.3, polymer
 
-12. This will show the cavity area, and you can now align the substrate along the free cavity direction.
+13. This will show the cavity area, and you can now align the substrate along the free cavity direction.
 
-13. Once satisfied with the new orientation, save the new substarte as `save sub_new.pdb, resname SUB`
+14. Once satisfied with the new orientation, save the new substarte as `save sub_new.pdb, resname SUB`
     
