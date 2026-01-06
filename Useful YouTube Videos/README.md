@@ -30,6 +30,7 @@
 11. Type,
     
     show surface
+    
     set transparency, 0.3, polymer
 
 13. This will show the cavity area, and you can now align the substrate along the free cavity direction.
