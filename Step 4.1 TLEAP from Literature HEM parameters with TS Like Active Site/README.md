@@ -100,4 +100,9 @@ Also, add a new bond in the `@<TRIPOS>BOND` section as `4     1    11 1`. Overal
 
 Now copy the newly created `sub.frcmod`, `sub.mol2`, from Step-2 above into this directory.
 
-Open `3KOH_mcpbpy.pdb` and change the coordinates of the `SUB` resid into this new coordinates in the sub.mol2 file.
+Open `3KOH_mcpbpy.pdb` and change the coordinates of the `SUB` resid with the coordinates in the structurally modified `sub.mol2` file.
+
+### Step 4: Run `tleap.sh`
+
+In this step, run `source tleap.sh`. This will generate the `parmtop` and `inpcrd` files for the modified system. This can then be used directly for the MD run.
+
