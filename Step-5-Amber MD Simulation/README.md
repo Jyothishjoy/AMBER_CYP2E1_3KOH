@@ -4,7 +4,7 @@ Copy `prmtop` and `inpcrd` files from `tleap` into the MD Simulation directory.
 
 **Step-1: Energy Minumization**
 
-Since we aim to generate a TS-like active site for the P450 enzyme, we decided to use NMR style gemoetric constraints at the active site to maintain the TS-like geometry of the O---H---C interaction.
+Since we aim to generate a TS-like active site for the P450 enzyme, we decided to use NMR-style geometric restraints at the active site to maintain the TS-like geometry of the O---H---C interaction.
 
 The constrained minimization input (`parm_min.in`).
 
