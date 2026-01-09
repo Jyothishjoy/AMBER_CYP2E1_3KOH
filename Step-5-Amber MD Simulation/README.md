@@ -54,13 +54,21 @@ Corresponding submission script (`run_min.sh`).
     
     # Launch pmemd.cuda 
     pmemd.cuda                                  -O     -i   $INP   -p   $TOP   -c   $CRD   -r   $OUT.rst \
-                                                       -o   $OUT.out   -e   $OUT.ene   -v   $OUT.vel   -inf $OUT.nfo   -x   $OUT.nc \
+                                                       -o   $OUT.out   -e   $OUT.ene   -v   $OUT.vel   -inf $OUT.nfo   -x   $OUT.mdcrd \
                                                        -ref $CRD
 
 
+Tip: Since this is an energy minimization process, AMBER does not produce a `netcdf` file with `mdcrd` extension. Use `cpptraj` to check the last structure of the minimization using the following script (`cpptraj_struc.in`).
 
+        parm 3KOH_solv.prmtop
+        trajin 3KOH_min.rst
+        autoimage
+        strip :WAT,:Cl\-
+        trajout 3KOH_min.pdb
+        run
 
-
+`source /apps/src/ambertools/24/amber24/amber.sh` (only one time)
+Type `cpptraj cpptraj_struc.in` to generate `3KOH_min.pdb` and visualize using PyMol to check if the restraints are okay.
 
 **Step-2: Heat the system**
 
