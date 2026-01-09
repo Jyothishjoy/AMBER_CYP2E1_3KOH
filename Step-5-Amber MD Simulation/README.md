@@ -309,4 +309,44 @@ Submission script (`run_md.sh`):
 
 
 
+**Trajectory Analysis**
+
+At the end of a successful MD simulation, convert the last frame into a pdb file for visual inspection, use the following input (cpptraj_str.in) with `cpptraj`.
+
+    parm 3KOH_solv.prmtop
+    trajin 3KOH_md.rst
+    autoimage
+    strip :WAT,:Cl\-
+    trajout 3KOH_md.pdb
+    run
+
+RMSD of the protein backbone, the HEM, and SUB acn be examined using the `rmsd_analysis.in` input file with `cpptraj`.
+
+    parm 3KOH_solv.prmtop
+    trajin 3KOH_md.mdcrd
+    
+    # Center and wrap
+    autoimage
+    
+    # Set reference
+    reference 3KOH_md.mdcrd [1]
+    
+    # Calculate RMSDs
+    # Syntax: rms <name> <mask_to_fit> [out <filename>] [ref <reference>]
+    rms Protein_BB :1-476@CA,C,N out rmsd_final.dat
+    rms Heme_Group :HEM out rmsd_final.dat
+    rms Substrate :SUB out rmsd_final.dat
+    
+    run
+
+To visualize the final trajectory (`traj_extract.in`).
+
+    parm 3KOH_solv.prmtop
+    trajin 3KOH_md.mdcrd              # reads the binary mdcrd (auto-detects format)
+    autoimage
+    center :1-9999 mass                # adjust residue range as needed
+    rms first :1-9999@CA,C,N,O         # pick an appropriate mask for RMS
+    strip :WAT,:Cl\-
+    trajout md_traj.pdb pdb           # PDB with all frames (movie)
+
 
