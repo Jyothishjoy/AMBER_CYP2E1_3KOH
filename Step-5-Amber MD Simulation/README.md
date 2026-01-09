@@ -71,6 +71,11 @@ Tip: Since this is an energy minimization process, AMBER does not produce a `net
 
 Type `cpptraj cpptraj_struc.in` to generate `3KOH_min.pdb` and visualize using PyMol to check if the restraints are okay.
 
+
+**Step-2: Heat the system**
+
+`prmtop`, `inpcrd`,  and `{name}_min.rst` files are required for this step.
+
 Input file (`parm_heat.in`):
 
         heating_with_restraints.in (200 ps, 1 fs timestep)
@@ -133,9 +138,7 @@ Submission script (`run_heat.sh`):
 
 
 
-**Step-2: Heat the system**
 
-`prmtop`, `inpcrd`,  and `{name}_min.rst` files are required for this step.
 
 
 **Step-3: Equilibration**
