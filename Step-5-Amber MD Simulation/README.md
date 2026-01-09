@@ -68,6 +68,7 @@ Tip: Since this is an energy minimization process, AMBER does not produce a `net
         run
 
 `source /apps/src/ambertools/24/amber24/amber.sh` (only one time)
+
 Type `cpptraj cpptraj_struc.in` to generate `3KOH_min.pdb` and visualize using PyMol to check if the restraints are okay.
 
 **Step-2: Heat the system**
