@@ -1,0 +1,19 @@
+Minimize
+ &cntrl
+  imin=1,       ! run minimization
+  ntx=1,        ! read coords only
+  irest=0,      ! not a restart
+  maxcyc=30000, ! total steps
+  ncyc=30000,   ! steepest descent then CG: Here 30000 make usre it uses Steepest descent throughout to eliminate LINMIN error
+  ntpr=100,     ! print energies
+  ntwx=100,     ! print trajectory output
+  ntb=1,        ! constant volume periodic conditions
+  cut=12.0,     ! nonboned cutoff (Å) (ignored if ntb=0)
+  ioutfm=1,     ! Write netcdf file
+  nmropt=1     ! turn on nmr style restraints
+/
+&wt type='END' /   ! End of weight changes
+ &rst iat=7847,7858, r1=1.10, r2=1.20, r3=1.20, r4=1.30, rk2=1000.0, rk3=1000.0, /
+ &rst iat=7848,7858, r1=1.20, r2=1.30, r3=1.30, r4=1.40, rk2=1000.0, rk3=1000.0, /
+ &rst iat=0 /       ! End of restraints
+
