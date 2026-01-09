@@ -1,10 +1,12 @@
 ## Amber MD Simulation Procedure
 
+Copy `prmtop` and `inpcrd` files from `tleap` into the MD Simulation directory.
+
 **Step-1: Energy Minumization**
 
 Since we aim to generate a TS-like active site for the P450 enzyme, we decided to use NMR style gemoetric constraints at the active site to maintain the TS-like geometry of the O---H---C interaction.
 
-The constrained minimization input.
+The constrained minimization input (`parm_min.in`).
 
     Minimize
      &cntrl
@@ -25,7 +27,7 @@ The constrained minimization input.
      &rst iat=7848,7858, r1=1.20, r2=1.30, r3=1.30, r4=1.40, rk2=1000.0, rk3=1000.0, /
      &rst iat=0 /       ! End of restraints
 
-Corresponding submission script. 
+Corresponding submission script (`run_min.sh`). 
 
     #!/bin/bash
     #SBATCH --job-name=3KOH_min
