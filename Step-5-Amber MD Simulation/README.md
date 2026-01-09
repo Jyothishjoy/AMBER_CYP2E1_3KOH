@@ -146,4 +146,167 @@ Submission script (`run_heat.sh`):
 
 **Step-3: Equilibration**
 
+`prmtop`, `inpcrd`,  and `{name}_heat.rst` files are required for this step.
+
+Input file (`parm_equi.in`):
+
+        NPT equilibration with distance restraints
+        &cntrl
+          imin=0,           ! Run Molecular Dynamics (no minimization)
+          ntx=5,            ! Read coordinates AND velocities (restart mode)
+          irest=1,          ! Continue from a previous MD run (restart)
+          
+          ntb=2,            ! Periodic boundaries with constant Pressure
+          ntp=1,            ! Isotropic pressure scaling
+          pres0=1.0,        ! Target pressure in bar (1.0 bar = ~1 atm)
+          taup=2.0,         ! Pressure relaxation time (in ps)
+          
+          ntt=3,            ! Langevin thermostat
+          temp0=300.0,      ! Target temperature
+          tempi=300.0,      ! Initial temperature (ignored if irest=1)
+          gamma_ln=1.0,     ! Collision frequency for Langevin thermostat
+          ig=-1,            ! Random seed for thermostat (ensures unique velocities)
+        
+          nstlim=300000,    ! Number of steps (300,000 * 1fs = 300 ps)
+          dt=0.001,         ! Timestep in ps (1 fs)
+          
+          cut=10.0,         ! Non-bonded cutoff in Angstroms
+          ntc=2,            ! Enable SHAKE to constrain bonds involving Hydrogen
+          ntf=2,            ! Bond interactions involving H are omitted from force calc
+          ntr=0,            ! No positional (Cartesian) restraints
+          
+          ntpr=1000,        ! Print energies to mdout every 1,000 steps
+          ntwx=1000,        ! Write coordinates to trajectory every 1,000 steps
+          ntwr=5000,        ! Write restart file every 5,000 steps
+          
+          nmropt=1,         ! Enable NMR-style restraints and weight changes
+        &end
+        
+        &wt 
+          type='DUMPFREQ', istep1=100, ! Write restraint data to external file every 100 steps
+        &end
+        
+        &wt 
+          type='END',       ! End of the weight change/DUMPFREQ block
+        &end
+        
+        &rst iat=7847,7858, r1=1.10, r2=1.20, r3=1.20, r4=1.30, rk2=1000.0, rk3=1000.0, /
+        &rst iat=7848,7858, r1=1.20, r2=1.30, r3=1.30, r4=1.40, rk2=1000.0, rk3=1000.0, /
+        /
+
+Submission script (`run_equi.sh`):
+
+        #!/bin/bash
+        #SBATCH --job-name=3KOH_equi
+        #SBATCH --output=3KOH_equi.gpus
+        #SBATCH --nodes=1
+        #SBATCH --ntasks-per-node=1
+        #SBATCH --mem=4G
+        #SBATCH --gpus=1
+        #SBATCH --time=48:00:00
+        
+        # Load Modules
+        module purge
+        module load python/3.12
+        module load gcc/14.1
+        module load spack/release
+        source /apps/src/ambertools/24/amber24/amber.sh
+        module load cuda/12.4.1-pw6cogp
+        
+        # Amber input files and output name
+        INP=parm_equi.in
+        TOP=3KOH_solv.prmtop
+        CRD=3KOH_heat.rst
+        OUT=3KOH_equi
+        
+        # Launch pmemd.cuda 
+        pmemd.cuda                                  -O     -i   $INP   -p   $TOP   -c   $CRD   -r   $OUT.rst \
+                                                           -o   $OUT.out   -e   $OUT.ene   -v   $OUT.vel   -inf $OUT.nfo   -x   $OUT.mdcrd \
+                                                           -ref $CRD
+
+
+
+
+
 **Step-4: MD Simulation**
+
+`prmtop`, `inpcrd`,  and `{name}_equi.rst` files are required for this step.
+
+Input file (`parm_md.in`):
+
+        Production MD (100 ns, 2 fs timestep)
+        &cntrl
+          imin=0,           ! Run Molecular Dynamics (no minimization)
+          ntx=5,            ! Read coordinates AND velocities from restart file
+          irest=1,          ! Continue from previous MD (restarts velocities)
+          
+          ntb=2,            ! Periodic boundaries at Constant Pressure
+          ntp=1,            ! Isotropic pressure scaling (box scales equally in X,Y,Z)
+          pres0=1.0,        ! Target pressure of 1.0 bar
+          taup=2.0,         ! Pressure relaxation time (in ps)
+          
+          ntt=3,            ! Langevin thermostat
+          temp0=300.0,      ! Target temperature
+          gamma_ln=1.0,     ! Collision frequency (ps^-1)
+          ig=-1,            ! Random seed for thermostat (ensures unique run)
+        
+          nstlim=50000000,  ! Number of steps (50M steps * 0.002 ps = 100,000 ps)
+          dt=0.002,         ! Timestep in ps (2 fs). Possible because SHAKE is on.
+          
+          cut=10.0,         ! Non-bonded cutoff distance in Angstroms
+          ntc=2,            ! SHAKE enabled: constrains all bonds involving Hydrogen
+          ntf=2,            ! Bond interactions involving H are omitted from force calculation
+          ntr=0,            ! No positional restraints (using distance restraints instead)
+          
+          ntpr=1000,        ! Print energies to mdout every 2 ps (1,000 * 0.002)
+          ntwx=5000,        ! Write trajectory (nc) every 10 ps (5,000 * 0.002)
+          ntwr=50000,       ! Write restart (rst7) every 100 ps (backup in case of crash)
+          
+          nmropt=1,         ! Flag to enable &wt and &rst sections
+        &end
+        
+        &wt 
+          type='DUMPFREQ', istep1=100, ! Record restraint distances every 100 steps
+        &end
+        
+        &wt 
+          type='END', 
+        &end
+        
+        &rst iat=7847,7858, r1=1.10, r2=1.20, r3=1.20, r4=1.30, rk2=1000.0, rk3=1000.0, /
+        &rst iat=7848,7858, r1=1.20, r2=1.30, r3=1.30, r4=1.40, rk2=1000.0, rk3=1000.0, /
+        /
+
+Submission script (`run_md.sh`):
+
+        #!/bin/bash
+        #SBATCH --job-name=3KOH_md
+        #SBATCH --output=3KOH_md.gpus
+        #SBATCH --nodes=1
+        #SBATCH --ntasks-per-node=1
+        #SBATCH --mem=4G
+        #SBATCH --gpus=h200:1
+        #SBATCH --time=48:00:00
+        
+        # Load Modules
+        module purge
+        module load python/3.12
+        module load gcc/14.1
+        module load spack/release
+        source /apps/src/ambertools/24/amber24/amber.sh
+        module load cuda/12.4.1-pw6cogp
+        
+        # Amber input files and output name
+        INP=parm_md.in
+        TOP=3KOH_solv.prmtop
+        CRD=3KOH_equi.rst
+        OUT=3KOH_md
+        
+        # Launch pmemd.cuda 
+        pmemd.cuda                                  -O     -i   $INP   -p   $TOP   -c   $CRD   -r   $OUT.rst \
+                                                           -o   $OUT.out   -e   $OUT.ene   -v   $OUT.vel   -inf $OUT.nfo   -x   $OUT.mdcrd \
+                                                           -ref $CRD
+
+
+
+
