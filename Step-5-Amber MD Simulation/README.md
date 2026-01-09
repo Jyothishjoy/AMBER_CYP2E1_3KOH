@@ -309,7 +309,7 @@ Submission script (`run_md.sh`):
 
 
 
-**Trajectory Analysis**
+## Trajectory Analysis
 
 At the end of a successful MD simulation, convert the last frame into a pdb file for visual inspection, use the following input (cpptraj_str.in) with `cpptraj`.
 
