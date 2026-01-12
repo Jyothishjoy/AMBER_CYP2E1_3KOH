@@ -1,5 +1,7 @@
 ## Amber MD Simulation Procedure
 
+Simulation files are under: `/nobackup/archive/usr/fslcollab286/AMBER/3KOH/`
+
 Copy `prmtop` and `inpcrd` files from `tleap` into the MD Simulation directory.
 
 **Step-1: Energy Minumization**
