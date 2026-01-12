@@ -57,7 +57,7 @@ Since the anionic residues have carboxylate functionality and is not stabilized 
 In GaussView, protonated the carboxylate functionalities of `ASP274`, `GLU218` and `GLU419`. Saved the protonated structure as `theozyme_10A_fixed_protonated_ASP274-GLU281-GLU419.pdb`
 Now the overall charge of the system is +1 (-2 from `HEME` and +3 from `ARG79`, `ARG105`, and `ARG414`).
 
-.......................
+.......................                       ....................... 
 
 Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
 
@@ -75,7 +75,7 @@ We have two positively charged residues (ARG79 and ARG414), and three negatively
 
 In our model, ASP274, GLU281, GLU419 are at the outer bounday of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
 
-.............................
+.............................                        .......................
 
 ***Tip*** Saving the final structure from GaussView as `pdb` file is useful, as it retains the newly added cap hydrogens as `HETATM`, and hence they can be easily visualized in GaussView. 
 
