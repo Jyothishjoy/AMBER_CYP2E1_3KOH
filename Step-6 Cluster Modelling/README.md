@@ -61,11 +61,19 @@ Now the overall charge of the system is +1 (-2 from `HEME` and +3 from `ARG79`, 
 
 Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
 
-        ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALS278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
-        -SER285-THR286-GLN337-LEU342-VAL343-PRO345-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
+        ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
+        -SER285-THR286-GLN337-LEU342-VAL343-PRO344-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
 
 
-I deleted 
+I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivivty.
+
+I also noticed that ARG105(+chrg) we had in the previous model is not present here. ARG105(+chrg) is slightly farther from the 10A radius we chose. Including ARG105(+chrg) may lead to a much larger model.
+
+Thus, we decided to use only two ARG residues. 
+
+We have two positively charged residues (ARG79 and ARG414), and three negatively charged residues (ASP274, GLU281, GLU419), hence the overall charge will be -3, because of the two carboxylates from the HEM.
+
+In our model, ASP274, GLU281, GLU419 are at the outer bounday of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
 
 .............................
 
