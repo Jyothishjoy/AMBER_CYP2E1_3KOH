@@ -32,7 +32,7 @@ then run `cpptraj cpptraj_clustering.in`
 
 This will generate 10 cluster files and their representative snapshots. We used the snapshot with the maximum population of frames by checking the `info.dat` file. 
 
-Based on the information from `info.dat` file, 'rep.c1.pdb' file will be used for further cluster modelling.
+Based on the information from `info.dat`, and `summary.dat` files, and by visually examining the structure of the active site, 'rep.c1.pdb' file will be used for further cluster modelling.
 
 From the 'rep.c1.pdb', 10A-diameter sphere around the active site is extracted using PyMol using the following commands.
 
