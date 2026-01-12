@@ -39,7 +39,7 @@ From the 'rep.c1.pdb', 10A-diameter sphere around the active site is extracted u
 
         select active_site, br. all within 10 of (resi 478 and resn SUB and name H2)
         create theozyme, active_site
-        delete 1LW5
+        delete rep.c1
         delete active_site
         save theozyme_10A.pdb
 
