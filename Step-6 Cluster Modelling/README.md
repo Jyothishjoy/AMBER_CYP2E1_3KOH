@@ -2,29 +2,30 @@ After the production MD run from Step 5 using the literature parameters for the 
 
 Used the following "cpptraj_clustering.in" file for the run.
 
-    parm 3KOH_solv.prmtop
-    trajin 3KOH_md.mdcrd
-    
-    # (optional but recommended) strip solvent/ions to speed up
-    strip :WAT,Na+,Cl-
-    
-    # (optional) align all frames to the first frame based on HEM+SUB heavy atoms
-    rms first :HEM,SUB&!@H= nofit out rms_align.dat
-    
-    # Perform k-means clustering on HEM + SUB heavy atoms
-    cluster c1 \
-      kmeans clusters 10 randompoint maxit 500 \
-      rms :HEM,SUB&!@H= \
-      sieve 10 random \
-      out clustertime.dat \
-      summary summary.dat \
-      info info.dat \
-      cpopvtime cpopvtime.agr normframe \
-      repout rep repfmt pdb \
-      singlerepout singlerep.nc singlerepfmt netcdf \
-      avgout avg avgfmt pdb
-    
-    run
+        # Load topology and trajectory
+        parm 3KOH_solv.prmtop
+        trajin 3KOH_md.mdcrd
+        
+        # Strip solvent and ions to reduce memory overhead
+        strip :WAT,K+,Cl-  # Note: Changed Na+ to K+ based on your filename '3KOH'
+        
+        # Align frames to the first frame (Important for RMSD-based clustering)
+        rms first :HEM,SUB&!@H= out rms_align.dat
+        
+        # Perform k-means clustering
+        cluster C1 \
+          kmeans clusters 10 randompoint maxit 500 \
+          rms :HEM,SUB&!@H= \
+          sieve 10 \
+          out clustertime.dat \
+          summary summary.dat \
+          info info.dat \
+          cpopvtime cpopvtime.agr normframe \
+          repout rep repfmt pdb \
+          singlerepout singlerep.nc singlerepfmt netcdf \
+          avgout avg avgfmt pdb
+        
+        run
 
 In the FSL, `source /apps/src/ambertools/24/amber24/amber.sh` to activate the AmberTools.
 
