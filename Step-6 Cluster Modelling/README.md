@@ -65,7 +65,9 @@ Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
         -SER285-THR286-GLN337-LEU342-VAL343-PRO344-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
 
 
-I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivivty.
+I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivivty. 
+
+Save this new model as `theozyme_10A_edited.pdb` (`save theozyme_10A_edited.pdb`)
 
 I also noticed that ARG105(+chrg) we had in the previous model is not present here. ARG105(+chrg) is slightly farther from the 10A radius we chose. Including ARG105(+chrg) may lead to a much larger model.
 
@@ -73,7 +75,7 @@ Thus, we decided to use only two ARG residues.
 
 We have two positively charged residues (ARG79 and ARG414), and three negatively charged residues (ASP274, GLU281, GLU419), hence the overall charge will be -3, because of the two carboxylates from the HEM.
 
-In our model, ASP274, GLU281, GLU419 are at the outer bounday of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
+In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
 
 .............................                        .......................
 
