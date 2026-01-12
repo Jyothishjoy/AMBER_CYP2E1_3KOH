@@ -58,6 +58,7 @@ In GaussView, protonated the carboxylate functionalities of `ASP274`, `GLU218` a
 Now the overall charge of the system is +1 (-2 from `HEME` and +3 from `ARG79`, `ARG105`, and `ARG414`).
 
 .......................
+
 Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
 
         ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALS278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
@@ -65,6 +66,7 @@ Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
 
 
 I deleted 
+
 .............................
 
 ***Tip*** Saving the final structure from GaussView as `pdb` file is useful, as it retains the newly added cap hydrogens as `HETATM`, and hence they can be easily visualized in GaussView. 
