@@ -51,8 +51,8 @@ Sequence in the theozyme_10A.pdb is the following,
 
 Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
 
-                ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALS278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
-                -SER285-THR286-GLN337-LEU342-VAL343-PRO345-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
+        ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALS278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
+        -SER285-THR286-GLN337-LEU342-VAL343-PRO345-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
 
 I deleted `LEU 189` and `LEU 372` because they are not required for reactivity. Saved the structure as 'theozyme_10A.pdb'. 
 Opened `theozyme_10A.pdb` in GaussView and changed −CO and −NH on the enzyme backbone to H. Saved the structure as `theozyme_10A_fixed.pdb`. 
