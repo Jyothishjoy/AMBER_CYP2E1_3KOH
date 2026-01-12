@@ -81,6 +81,13 @@ In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, a
 
 ***Tip*** Saving the final structure from GaussView as `pdb` file is useful, as it retains the newly added cap hydrogens as `HETATM`, and hence they can be easily visualized in GaussView. 
 
+**Clean the Structure**
+
+Change -CO and -NH on enzyme backbone to H.
+
+Check the protonation state of histidine and lysine.
+
+
 Since the model is reasonably large, G16 maynot be the ideal choice for full QM optimization. I will be using QM/xTB method implemented in Orca-6.1 for the geometry optimization.
 
 **Step-I:**
