@@ -52,9 +52,11 @@ From 'rep.c0.pdb' and 'rep.c1.pdb', 10A-diameter sphere around the active site i
 
 Sequence in the theozyme_10A_rep_c0.pdb with TS-like Active site is the following,
 
-        ARG79-PHE85-ILE93-PHE95-ARG105-LEU112-PHE186-LEU189-ALA273-ASP274-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281-THR282-THR283-THR286-LEU342-VAL343-ASN346-LEU347-PRO348-HIE349-LEU372-PRO408-PHE409-SER410-ARG414-CAL415-CYP416-ALA417-GLY418-GLU419-LEU521-ALA422-PHE457-GLY458
+        ARG79(+chrg)-PHE85-ILE93-PHE95-ARG105(+chrg)-LEU112-PHE186-LEU189-ALA273-ASP274(-chrg)-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-THR286-LEU342-VAL343-ASN346-LEU347-PRO348-HIE349-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-LEU521-ALA422-PHE457-GLY458
 
+I deleted `LEU112-THR286-LEU372` because they are far from the active site and not particularly required for the reactivity. 
 
+Save this new model as `theozyme_10A_rep_c0_edited.pdb` (`save theozyme_10A_rep_c0_edited.pdb`)
 
 
 **Rep_c1_Model**
@@ -65,7 +67,7 @@ Sequence in the theozyme_10A_rep_c1.pdb with TS-like Active site is the followin
         -SER285-THR286-GLN337-LEU342-VAL343-PRO344-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
 
 
-I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivity. 
+I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422-CYS459` because they are far from the active site and not particularly required for the reactivity. 
 
 Save this new model as `theozyme_10A_rep_c1_edited.pdb` (`save theozyme_10A_rep_c1_edited.pdb`)
 
