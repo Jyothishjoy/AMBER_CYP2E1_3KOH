@@ -1,3 +1,5 @@
+### Clustering using CPPTRAJ
+
 After the production MD run from Step 5 using the literature parameters for the HEME part, clustering using KMeans is performed on the "3KOH_md.mdcrd" file using the cpptraj package.
 
 Used the following "cpptraj_clustering.in" file for the run.
@@ -33,15 +35,49 @@ then run `cpptraj cpptraj_clustering.in`
 
 This will generate 10 cluster files and their representative snapshots. We used the snapshot with the maximum population of frames by checking the `info.dat` file. 
 
-Based on the information from `info.dat`, and `summary.dat` files, and by visually examining the structure of the active site, `rep.c1.pdb` file will be used for further cluster modelling.
+Based on the information from `info.dat`, and `summary.dat` files, and by visually examining the structure of the active site, `rep.c0.pdb` and `rep.c1.pdb` turned out to be two unique configurations of the active site. These two files will be used for further cluster modelling.
 
-From the 'rep.c1.pdb', 10A-diameter sphere around the active site is extracted using PyMol using the following commands.
+### Active Site Creation and Editing using PyMol
+
+From 'rep.c0.pdb' and 'rep.c1.pdb', 10A-diameter sphere around the active site is extracted using PyMol using the following commands.
 
         select active_site, br. all within 10 of (resi 478 and resn SUB and name H2)
         create theozyme, active_site
-        delete rep.c1
+        delete rep.c0
         delete active_site
         save theozyme_10A.pdb
+
+
+**Rep_c0_Model**
+
+Sequence in the theozyme_10A_rep_c0.pdb with TS-like Active site is the following,
+
+                ARG79-PHE85-ILE93-PHE95-ARG105-LEU112-PHE186-LEU189-ALA273-ASP274-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281-THR282-THR283-THR286-LEU342-VAL343-ASN346-LEU347-PRO348-HIE349-LEU372-PRO408-PHE409-SER410-ARG414-CAL415-CYP416-ALA417-GLY418-GLU419-LEU521-ALA422-PHE457-GLY458
+
+
+
+
+**Rep_c1_Model**
+
+Sequence in the theozyme_10A_rep_c1.pdb with TS-like Active site is the following,
+
+        ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
+        -SER285-THR286-GLN337-LEU342-VAL343-PRO344-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
+
+
+I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivity. 
+
+Save this new model as `theozyme_10A_rep_c1_edited.pdb` (`save theozyme_10A_rep_c1_edited.pdb`)
+
+I also noticed that ARG105(+chrg), which we had in the previous model, is not present here. ARG105(+chrg) is slightly farther from the 10A radius we chose. Including ARG105(+chrg) may lead to a much larger model.
+
+Thus, we decided to use only two ARG residues. 
+
+We have two positively charged residues (ARG79 and ARG414), and three negatively charged residues (ASP274, GLU281, GLU419), hence the overall charge will be -3, because of the two carboxylates from the HEM.
+
+In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
+
+.............................   OLD DATA START .......................
 
 Sequence in the theozyme_10A.pdb is the following,
 
@@ -57,27 +93,7 @@ Since the anionic residues have carboxylate functionality and is not stabilized 
 In GaussView, protonated the carboxylate functionalities of `ASP274`, `GLU218` and `GLU419`. Saved the protonated structure as `theozyme_10A_fixed_protonated_ASP274-GLU281-GLU419.pdb`
 Now the overall charge of the system is +1 (-2 from `HEME` and +3 from `ARG79`, `ARG105`, and `ARG414`).
 
-.......................                       ....................... 
-
-Sequence in the theozyme_10A.pdb with TS-like Active site is the following,
-
-        ARG79(+chrg)-PHE85-ILE93-ILE94-PHE95-PHE186-LEU189-ASP274(-chrg)-LEU275-PHE276-PHE277-ALA278-GLY279-THR280-GLU281(-chrg)-THR282-THR283-SER284
-        -SER285-THR286-GLN337-LEU342-VAL343-PRO344-LEU372-PRO408-PHE409-SER410-ARG414(+chrg)-VAL415-CYP416-ALA417-GLY418-GLU419(-chrg)-ALA422-PHE457-GLY458-CYS459-HEM
-
-
-I deleted `THR283-SER284-SER285-THR286-GLN337-LEU372-ALA422` because they are far from the active site and not particularly required for the reactivivty. 
-
-Save this new model as `theozyme_10A_edited.pdb` (`save theozyme_10A_edited.pdb`)
-
-I also noticed that ARG105(+chrg) we had in the previous model is not present here. ARG105(+chrg) is slightly farther from the 10A radius we chose. Including ARG105(+chrg) may lead to a much larger model.
-
-Thus, we decided to use only two ARG residues. 
-
-We have two positively charged residues (ARG79 and ARG414), and three negatively charged residues (ASP274, GLU281, GLU419), hence the overall charge will be -3, because of the two carboxylates from the HEM.
-
-In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
-
-.............................                        .......................
+.............................   OLD DATA END .......................
 
 ***Tip*** Saving the final structure from GaussView as `pdb` file is useful, as it retains the newly added cap hydrogens as `HETATM`, and hence they can be easily visualized in GaussView. 
 
