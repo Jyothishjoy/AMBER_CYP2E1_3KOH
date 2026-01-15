@@ -79,6 +79,10 @@ We have two positively charged residues (ARG79 and ARG414), and three negatively
 
 In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, and hence are not stabilized by H-bonding. I have decided to protonate them so that the whole model will become charge neutral and doublet.
 
+**Rep_c1+Arg105_Model**
+
+In the above model, we had ARG105 missing and hence was charge neutral. In order to check the effct of ARG105 and to see if charge has any influence on the outcome, we decided to simply add ARG105 to the above model and called it `Rep_c1+Arg105_Model`. Overall charge of this system will be +1.
+
 .............................   OLD DATA START .......................
 
 Sequence in the theozyme_10A.pdb is the following,
