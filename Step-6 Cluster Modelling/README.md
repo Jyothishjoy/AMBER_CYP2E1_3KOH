@@ -116,6 +116,8 @@ Check the protonation state of histidine and lysine.
 
 Since the model is reasonably large, G16 maynot be the ideal choice for full QM optimization. I will be using QM/xTB method implemented in Orca-6.1 for the geometry optimization.
 
+Just so you know, we can now run QM/xTB in Gaussian using the method proposed by Dr. Tian Lu. See https://github.com/Jyothishjoy/Gaussian_xTB for installation instructions and sample input files.
+
 **Step-I:**
 Fix CA, CB, and HB atoms and run modredundant optimization to relax added cap H atoms.
 CA refers to the C atom that directly connects to the newly added cap HA. CB refers to the C atom that connects to the CA atom. HB refers to the H atoms already attached to the CA, which are not the newly added cap HA atoms. 
@@ -126,93 +128,44 @@ Then the remaining atoms will be in the QM layer. I decided to use the basic por
 https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmm-molecules.html#system-charges-and-multiplicities
 
 
-        !QM/XTB B3LYP/G D4 DEF2-SVP OPT
-        
-        %QMMM 
-        QMATOMS {459 521 526 529:533 538:542 545:548 551:560 575:578 591:609} END 
-        Charge_Total  1         # charge of the full system. 
-        Mult_Total    2         # multiplicity of the full system.
-        AutoFF_QM2_Method QM2
-        END
-        
-        %maxcore 12000
-        
-        %pal nprocs 12 end
-        
-        %geom
-            Constraints 
-                { C 0:1 C }
-                { C 8 C }
-                { C 20:21 C }
-        	    { C 24 C }
-                { C 35:36 C }
-                { C 43 C }
-                { C 51 C }
-                { C 58 C }
-                { C 88 C } 
-                { C 97 C }
-        		{ C 105:106 C }
-        		{ C 113 C }
-        		{ C 125:126 C }
-        		{ C 133 C }
-        		{ C 141 C }
-        		{ C 145 C }
-        		{ C 147:148 C }
-        		{ C 152 C }
-        		{ C 158 C }
-        		{ C 168 C }
-        		{ C 178 C }
-        		{ C 223 C }
-        		{ C 225 C }
-        		{ C 247 C }
-        		{ C 252 C }
-        		{ C 258 C }
-        		{ C 264 C }
-        		{ C 271 C }
-        		{ C 276 C }
-        		{ C 282 C }
-        		{ C 289 C }
-        		{ C 300 C }
-        		{ C 305 C }
-        		{ C 313 C }
-        		{ C 320 C }
-        		{ C 359 C }
-        		{ C 367 C }
-        		{ C 373 C }
-        		{ C 374 C }
-        		{ C 379 C }
-        		{ C 408 C }
-        		{ C 412 C }
-        		{ C 416 C }
-        		{ C 426 C }
-        		{ C 482 C }
-        		{ C 485 C }
-        		{ C 487 C }
-        		{ C 489 C }
-        		{ C 494 C }
-        		{ C 504 C }
-        		{ C 512:513 C }
-        		{ C 515:516 C }
-            end
-          end
-          
-          
-        * XYZ 0 2   # charge and mult. of the high level region
-         C          45.44000000   32.87500000   19.15600000 
-         C          46.53000000   33.25100000   20.11200000 
-         C          46.75000000   32.36400000   21.34300000 
-         C          47.37900000   30.99800000   21.21600000 
-         N          48.74300000   31.16000000   20.52100000 
-         C          49.17600000   30.65600000   19.33600000 
-         N          48.38200000   29.98700000   18.57400000 
-         N          50.31900000   30.88000000   18.84100000 
-         H          45.36500000   31.80900000   19.10200000 
-         H          47.42700000   33.11400000   19.50900000 
-         H          46.45900000   34.30300000   20.38800000 
-         H          47.45100000   32.91900000   21.96700000 
-         H          45.87100000   32.37500000   21.98800000 
-         H          47.58700000   30.54000000   22.18300000 
-         ..............
+                !QM/XTB UKS B3LYP/G D4 DEF2SVP OPT
+                
+                %maxcore 12000
+                %pal nprocs 12 end
+                    
+                %QMMM 
+                QMATOMS {421:422 425:426 484 489 492:496 501:505 508:511 514:523 538:541 554:572} END 
+                
+                ActiveAtoms {2:7 9:19 22:27 29:35 37:45 46:57 58:72 74:89 92:97 99:105 108:110 112:120 122:125 127:136 137:145 146:154 155:162 163:173 174:181 182:193 194:205 206:226 229:236 238:247 249:281 283:292 294:324 326:335 337:369 370:370 372:378 380:399 400:444 446:449 451:456 458:474 477:597 } END
+                
+                Charge_Total  0         # charge of the full system. 
+                Mult_Total    2         # multiplicity of the full system.
+                
+                AutoFF_QM2_Method QM2
+                END
+                
+                %geom 
+                  Constraints
+                    { B 505 564 C }
+                    { B 554 564 C }
+                  end
+                end
+                    
+                * XYZ 0 2   # charge and mult. of the high level region
+                C    34.138000000000     43.571000000000     29.691000000000
+                C    35.339000000000     44.410000000000     30.272000000000
+                C    36.407427311263     43.530502054024     30.923127426617
+                C    37.181698267575     42.634546129514     29.958923118671
+                N    38.222676124787     43.361792760969     29.256393278672
+                C    38.941934109961     42.803732575749     28.274268769881
+                N    38.671221993004     41.577900624377     27.835441320666
+                N    39.899031546074     43.483996352461     27.658387936962
+                H    34.469000000000     43.018000000000     28.837000000000
+                H    35.786715545623     44.997389076884     29.471399529152
+                H    34.941886950320     45.095298109721     31.021910065945
+                H    37.127009541037     44.169496820973     31.437245139677
+                H    35.929293062057     42.893357326242     31.670412669085
+                ------------------------------------------------------------
 
 **Step-II:**
 Run optimization by fixing the CA and cap HA atoms only. After this calculation, the model will be ready for further use. 
@@ -249,7 +202,7 @@ Here, I am using a 3 strp compund job to reoptimize the TS. First job freezes th
         
         %geom 
             Constraints
-        	      { C 560 C }
+        	{ C 560 C }
                 { C 542 C }
                 { C 601 C } 
                 { C 591 C }
@@ -291,7 +244,7 @@ Here, I am using a 3 strp compund job to reoptimize the TS. First job freezes th
         
         %geom 
             Constraints
-        	      { B 560 542 C }
+        	{ B 560 542 C }
                 { B 542 601 C }
                 { B 591 601 C }
             end
@@ -479,7 +432,7 @@ The neutral system did not introduce any changes to the TS structure. However, t
 We then reoptimized the same TS in Gaussian-16 using `UB3LYP/def2SVP CPCM(DCM)` and `UB3LYP/6-31G*/LANL2DZ CPCM(DCM)` levels of theory. This demonstrated that only `UB3LYP-D3(BJ)/6-31G*/LANL2DZ CPCM(DCM)` could correctly determine the spin densities and the later TS structure. Additionally, ORCA only has RHF-->UHF wavefunction stability analysis implemented, and therefore, it cannot correct for internal instabilities.
 
 Thus, the observation that `UB3LYP/6-31G*/LANL2DZ` level of theory is needed for this problem, and the lack of a solution for internal instability prompted us to use Gaussian-16 to move forward. 
-We then decided to use Gaussian's external tools option to incorporate xTB to carry out `QM/xTB` type ONIOM calculations. This was done using Tian Lu's `gau_xtb` package. A detailed instruction on its installation and usage can be found in my GitHub post (**Gaussian-xTB**)
+We then decided to use Gaussian's external tools option to incorporate xTB to carry out `QM/xTB` type ONIOM calculations. This was done using Tian Lu's `gau_xtb` package. A detailed instruction on its installation and usage can be found in my GitHub post (**Gaussian-xTB**) https://github.com/Jyothishjoy/Gaussian_xTB
 
 **Step-VIII:**
 We took the fully optimized TS coordinates from the ORCA QM/xTB calculation and prepared a Gaussian QM/xTB file using the ONIOM procedure. 
