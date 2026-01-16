@@ -56,7 +56,11 @@ Sequence in the theozyme_10A_rep_c0.pdb with TS-like Active site is the followin
 
 I deleted `LEU112-THR286-LEU372` because they are far from the active site and not particularly required for the reactivity. 
 
-Save this new model as `theozyme_10A_rep_c0_edited.pdb` (`save theozyme_10A_rep_c0_edited.pdb`)
+Saved this new model as `theozyme_10A_rep_c0_edited.pdb` (`save theozyme_10A_rep_c0_edited.pdb`)
+
+This model had three positively charged residues (ARG) and 3 negatively charged residues (ASP, GLU, GLU). Hence, the overall charge will be -2 comimg from the HEM carboxylates. 
+
+Since the negatively charged residues are in the periphery of the cluster model and they are not stabilized by any H-bonding, I decided to protonate them to minimize the effects of extreme charge on the periphery of the cluster. This results in an overall +1 charge and doublet spin state for the system.
 
 
 **Rep_c1_Model**
@@ -81,7 +85,7 @@ In our model, ASP274, GLU281, GLU419 are at the outer boundary of the cluster, a
 
 **Rep_c1+Arg105_Model**
 
-In the above model, we had ARG105 missing and hence was charge neutral. In order to check the effct of ARG105 and to see if charge has any influence on the outcome, we decided to simply add ARG105 to the above model and called it `Rep_c1+Arg105_Model`. Overall charge of this system will be +1.
+In the above model, we had ARG105 missing and hence it was charge neutral. In order to check the effect of ARG105 and to see if charge has any influence on the outcome, we decided to simply include ARG105 to the above model and call it `Rep_c1+Arg105_Model`. The overall charge of this system will be +1.
 
 .............................   OLD DATA START .......................
 
