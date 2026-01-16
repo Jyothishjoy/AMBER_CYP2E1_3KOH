@@ -37,7 +37,7 @@ This will generate 10 cluster files and their representative snapshots. We used 
 
 Based on the information from `info.dat`, and `summary.dat` files, and by visually examining the structure of the active site, `rep.c0.pdb` and `rep.c1.pdb` turned out to be two unique configurations of the active site. These two files will be used for further cluster modelling.
 
-### Active Site Creation and Editing using PyMol
+### Active Site Preparation and Editing using PyMol
 
 From 'rep.c0.pdb' and 'rep.c1.pdb', 10A-diameter sphere around the active site is extracted using PyMol using the following commands.
 
